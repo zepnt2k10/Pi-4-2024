@@ -5,25 +5,30 @@
 \graphicspath{{../toancuabi/pic/}}
 \begingroup
 \AddToShipoutPicture*{\put(0,616){\includegraphics[width=19.3cm]{../bannertoancuabi}}}  
-\AddToShipoutPicture*{\put(78,493){\includegraphics[scale=1]{../tieudehihi.pdf}}}  
+\AddToShipoutPicture*{\put(150,525){\includegraphics[scale=1]{../tieudehihi.pdf}}}  
 \centering
 \endgroup
-\vspace*{215pt} 
+\vspace*{185pt} 
 
 \begin{multicols}{2}
-	$\pmb{1.}$ \textbf{Vẽ mê cung}
+	$\pmb{1.}$ \textbf{\color{toancuabi}Vẽ mê cung}
 	\vskip 0.1cm
-	\textbf{Cách} $\pmb{1:}$
+	\textbf{\color{toancuabi}Cách $\pmb{1}$:}
 	\vskip 0.1cm
 	Dùng giấy và bút chì vẽ một hình chữ nhật có số ô vuông mỗi cạnh là lẻ, ví dụ: 
 	\begin{figure}[H]
 		\vspace*{-5pt}
 		\centering
 		\captionsetup{labelformat= empty, justification=centering}
-		\begin{tikzpicture}[toancuabi]
+		\begin{tikzpicture}[toancuabi, scale = 0.4, node font= \small]
 			\draw (0,0) grid (15,11);
-			\draw[--stealth]  (-0.5,0) -- (-0.5,11);
-			\draw[--stealth]  (-0.5,0) -- (-0.5,11);
+			\draw[-stealth]  (-0.5,0) -- (-0.5,11);
+			\draw[-stealth]  (-0.5,11) -- (-0.5,0);
+			
+			\draw[-stealth]  (0,11.5) -- (15,11.5);
+			\draw[-stealth]  (15,11.5) -- (0,11.5);
+			\draw (-1,5.5) node [rotate = 90] {$11$ ô vuông};
+			\draw (7.5,12) node  {$15$ ô vuông};
 		\end{tikzpicture}
 		\vspace*{-10pt}
 	\end{figure}
@@ -32,48 +37,79 @@
 		\vspace*{-5pt}
 		\centering
 		\captionsetup{labelformat= empty, justification=centering}
-		\begin{tikzpicture}[toancuabi]
+		\begin{tikzpicture}[toancuabi, scale = 0.4]
 			\draw (0,0) grid (15,11);
-			\draw[--stealth]  (-0.5,0) -- (-0.5,11);
-			\draw[--stealth]  (-0.5,0) -- (-0.5,11);
+			\foreach \x in {0,2,4,...,14}
+				\foreach \y in {1,3,5,...,11}
+					{
+						\draw[fill=cackithi] (\x,\y -1) rectangle (\x + 1, \y); 
+					}
 		\end{tikzpicture}
-		\vspace*{-10pt}
+		\vspace*{1pt}
 	\end{figure}
 	Tiếp theo, tô bóng rất nhẹ ở các ô vuông khác như hình minh họa bên dưới.
 	\begin{figure}[H]
 		\vspace*{-5pt}
 		\centering
 		\captionsetup{labelformat= empty, justification=centering}
-		\begin{tikzpicture}[toancuabi]
+		\begin{tikzpicture}[toancuabi, scale = 0.4]
 			\draw (0,0) grid (15,11);
-			\draw[--stealth]  (-0.5,0) -- (-0.5,11);
-			\draw[--stealth]  (-0.5,0) -- (-0.5,11);
+			\foreach \x in {0,2,4,...,14}
+			\foreach \y in {1,3,5,...,11}
+			{
+				\draw[fill=cackithi] (\x,\y -1) rectangle (\x + 1, \y); 
+			}
+			\foreach \x in {0,2,4,...,14}
+			\foreach \y in {1,3,5,...,9}
+			{
+				\draw[fill=cackithi!40] (\x,\y) rectangle (\x + 1, \y+1);
+			}
+			\foreach \x in {1,3,5,...,13}
+			\foreach \y in {1,3,5,...,11}
+			{
+				\draw[fill=cackithi!40] (\x,\y-1) rectangle (\x + 1, \y);
+			}
 		\end{tikzpicture}
-		\vspace*{-10pt}
+		\vspace*{-5pt}
 	\end{figure}
 	Những hình vuông này sẽ là một phần của lối đi hoặc một phần của bức tường trong mê cung. Các ô vuông màu trắng sẽ là một phần của đường đi.
-	\vskip 0.1cm
-	Đã đến lúc tạo ra con đường của mê cung! Chúng ta sẽ tạo lối vào bằng cách xóa một trong những hình vuông được tô bóng mờ nhẹ để tạo một con đường quanh co dẫn đến lối ra như hình minh họa bên dưới.
 	\begin{figure}[H]
 		\vspace*{-5pt}
 		\centering
 		\captionsetup{labelformat= empty, justification=centering}
-		\begin{tikzpicture}[toancuabi]
-			\draw (0,0) grid (15,11);
-			\draw[--stealth]  (-0.5,0) -- (-0.5,11);
-			\draw[--stealth]  (-0.5,0) -- (-0.5,11);
+		\begin{tikzpicture}[toancuabi, scale = 0.4]
+%			\draw (0,0) grid (15,11);
+			\foreach \x in {0,2,4,...,14}
+			\foreach \y in {1,3,5,...,11}
+			{
+				\draw[fill=cackithi] (\x,\y -1) rectangle (\x + 1, \y); 
+			}
+			\foreach \x in {0,2,4,...,14}
+			\foreach \y in {1,3,5,...,9}
+			{
+				\draw[fill=cackithi!40] (\x,\y) rectangle (\x + 1, \y+1);
+			}
+			\foreach \x in {1,3,5,...,13}
+			\foreach \y in {1,3,5,...,11}
+			{
+				\draw[fill=cackithi!40] (\x,\y-1) rectangle (\x + 1, \y);
+			}
+			\draw [fill= white] (1,1) rectangle (8,2);
+			\draw [fill= white] (1,1) rectangle (2,8);
+			\draw [fill= white] (2,7) rectangle (4,8);
+			\draw [fill= white] (3,7) rectangle (4,10);
 		\end{tikzpicture}
-		\vspace*{-10pt}
+		\vspace*{-5pt}
 	\end{figure}
+	Đã đến lúc tạo ra con đường của mê cung! Chúng ta sẽ tạo lối vào bằng cách xóa một trong những hình vuông được tô bóng mờ nhẹ để tạo một con đường quanh co dẫn đến lối ra như hình minh họa bên trên.
+	\vskip 0.1cm
 	Bắt đầu tạo những con đường mới từ con đường đầu tiên này, nhưng hãy làm cho chúng dẫn đến ngõ cụt để đánh lừa mọi người.
 	\begin{figure}[H]
 		\vspace*{-5pt}
 		\centering
 		\captionsetup{labelformat= empty, justification=centering}
-		\begin{tikzpicture}[toancuabi]
+		\begin{tikzpicture}[toancuabi, scale = 0.4]
 			\draw (0,0) grid (15,11);
-			\draw[--stealth]  (-0.5,0) -- (-0.5,11);
-			\draw[--stealth]  (-0.5,0) -- (-0.5,11);
 		\end{tikzpicture}
 		\vspace*{-10pt}
 	\end{figure}
@@ -82,10 +118,8 @@
 		\vspace*{-5pt}
 		\centering
 		\captionsetup{labelformat= empty, justification=centering}
-		\begin{tikzpicture}[toancuabi]
+		\begin{tikzpicture}[toancuabi, scale = 0.4]
 			\draw (0,0) grid (15,11);
-			\draw[--stealth]  (-0.5,0) -- (-0.5,11);
-			\draw[--stealth]  (-0.5,0) -- (-0.5,11);
 		\end{tikzpicture}
 		\vspace*{-10pt}
 	\end{figure}
@@ -94,24 +128,20 @@
 		\vspace*{-5pt}
 		\centering
 		\captionsetup{labelformat= empty, justification=centering}
-		\begin{tikzpicture}[toancuabi]
+		\begin{tikzpicture}[toancuabi, scale = 0.4]
 			\draw (0,0) grid (15,11);
-			\draw[--stealth]  (-0.5,0) -- (-0.5,11);
-			\draw[--stealth]  (-0.5,0) -- (-0.5,11);
 		\end{tikzpicture}
 		\vspace*{-10pt}
 	\end{figure}
-	\textbf{Cách $\pmb{2:}$}
+	\textbf{\color{toancuabi}Cách $\pmb{2:}$}
 	\vskip 0.1cm  
 	Bắt đầu từ giữa trang giấy, các em hãy sử dụng bút chì và thước kẻ để tạo một hàng dọc với $9$ chấm nhỏ, mỗi chấm nhỏ cách nhau $0,5$ cm.
 	\begin{figure}[H]
 		\vspace*{-5pt}
 		\centering
 		\captionsetup{labelformat= empty, justification=centering}
-		\begin{tikzpicture}[toancuabi]
+		\begin{tikzpicture}[toancuabi, scale = 0.4]
 			\draw (0,0) grid (15,11);
-			\draw[--stealth]  (-0.5,0) -- (-0.5,11);
-			\draw[--stealth]  (-0.5,0) -- (-0.5,11);
 		\end{tikzpicture}
 		\vspace*{-10pt}
 	\end{figure}
@@ -120,10 +150,8 @@
 		\vspace*{-5pt}
 		\centering
 		\captionsetup{labelformat= empty, justification=centering}
-		\begin{tikzpicture}[toancuabi]
+		\begin{tikzpicture}[toancuabi, scale = 0.4]
 			\draw (0,0) grid (15,11);
-			\draw[--stealth]  (-0.5,0) -- (-0.5,11);
-			\draw[--stealth]  (-0.5,0) -- (-0.5,11);
 		\end{tikzpicture}
 		\vspace*{-10pt}
 	\end{figure}
@@ -132,10 +160,8 @@
 		\vspace*{-5pt}
 		\centering
 		\captionsetup{labelformat= empty, justification=centering}
-		\begin{tikzpicture}[toancuabi]
+		\begin{tikzpicture}[toancuabi, scale = 0.4]
 			\draw (0,0) grid (15,11);
-			\draw[--stealth]  (-0.5,0) -- (-0.5,11);
-			\draw[--stealth]  (-0.5,0) -- (-0.5,11);
 		\end{tikzpicture}
 		\vspace*{-10pt}
 	\end{figure}
@@ -144,10 +170,8 @@
 		\vspace*{-5pt}
 		\centering
 		\captionsetup{labelformat= empty, justification=centering}
-		\begin{tikzpicture}[toancuabi]
+		\begin{tikzpicture}[toancuabi, scale = 0.4]
 			\draw (0,0) grid (15,11);
-			\draw[--stealth]  (-0.5,0) -- (-0.5,11);
-			\draw[--stealth]  (-0.5,0) -- (-0.5,11);
 		\end{tikzpicture}
 		\vspace*{-10pt}
 	\end{figure}
@@ -156,10 +180,8 @@
 		\vspace*{-5pt}
 		\centering
 		\captionsetup{labelformat= empty, justification=centering}
-		\begin{tikzpicture}[toancuabi]
+		\begin{tikzpicture}[toancuabi, scale = 0.4]
 			\draw (0,0) grid (15,11);
-			\draw[--stealth]  (-0.5,0) -- (-0.5,11);
-			\draw[--stealth]  (-0.5,0) -- (-0.5,11);
 		\end{tikzpicture}
 		\vspace*{-10pt}
 	\end{figure}
@@ -168,10 +190,8 @@
 		\vspace*{-5pt}
 		\centering
 		\captionsetup{labelformat= empty, justification=centering}
-		\begin{tikzpicture}[toancuabi]
+		\begin{tikzpicture}[toancuabi, scale = 0.4]
 			\draw (0,0) grid (15,11);
-			\draw[--stealth]  (-0.5,0) -- (-0.5,11);
-			\draw[--stealth]  (-0.5,0) -- (-0.5,11);
 		\end{tikzpicture}
 		\vspace*{-10pt}
 	\end{figure}
@@ -180,10 +200,8 @@
 		\vspace*{-5pt}
 		\centering
 		\captionsetup{labelformat= empty, justification=centering}
-		\begin{tikzpicture}[toancuabi]
+		\begin{tikzpicture}[toancuabi, scale = 0.4]
 			\draw (0,0) grid (15,11);
-			\draw[--stealth]  (-0.5,0) -- (-0.5,11);
-			\draw[--stealth]  (-0.5,0) -- (-0.5,11);
 		\end{tikzpicture}
 		\vspace*{-10pt}
 	\end{figure}
@@ -192,10 +210,8 @@
 		\vspace*{-5pt}
 		\centering
 		\captionsetup{labelformat= empty, justification=centering}
-		\begin{tikzpicture}[toancuabi]
+		\begin{tikzpicture}[toancuabi, scale = 0.4]
 			\draw (0,0) grid (15,11);
-			\draw[--stealth]  (-0.5,0) -- (-0.5,11);
-			\draw[--stealth]  (-0.5,0) -- (-0.5,11);
 		\end{tikzpicture}
 		\vspace*{-10pt}
 	\end{figure}
@@ -204,10 +220,8 @@
 		\vspace*{-5pt}
 		\centering
 		\captionsetup{labelformat= empty, justification=centering}
-		\begin{tikzpicture}[toancuabi]
+		\begin{tikzpicture}[toancuabi, scale = 0.4]
 			\draw (0,0) grid (15,11);
-			\draw[--stealth]  (-0.5,0) -- (-0.5,11);
-			\draw[--stealth]  (-0.5,0) -- (-0.5,11);
 		\end{tikzpicture}
 		\vspace*{-10pt}
 	\end{figure}
@@ -216,14 +230,12 @@
 		\vspace*{-5pt}
 		\centering
 		\captionsetup{labelformat= empty, justification=centering}
-		\begin{tikzpicture}[toancuabi]
+		\begin{tikzpicture}[toancuabi, scale = 0.4]
 			\draw (0,0) grid (15,11);
-			\draw[--stealth]  (-0.5,0) -- (-0.5,11);
-			\draw[--stealth]  (-0.5,0) -- (-0.5,11);
 		\end{tikzpicture}
 		\vspace*{-10pt}
 	\end{figure}
-	\textbf{Tài liệu tham khảo}
+	\textbf{\color{toancuabi}Tài liệu tham khảo}
 	\vskip 0.1cm
 	\url{https://www.artfulmaths.com/mathematical-art-lessons.html}
 \end{multicols}
@@ -237,47 +249,47 @@
 %\begin{multicols}{2}
 %	Tiếp tục với nội dung về đề thi tuyển sinh vào Câu lạc bộ Unicorn Math Circle, trong số này, tạp chí Pi giới thiệu đến bạn đọc bài thi dành cho các bạn học sinh lớp $7$. Thời gian đề xuất làm bài là $90$ phút. 
 %	\vskip 0.1cm
-%	\textbf{\color{toancuabi}Bài $\pmb1$.} Tìm một số có $3$ chữ số mà khi tăng chữ số hàng trăm lên $3$ đơn vị, chữ số hàng chục lên $2$ đơn vị và chữ số hàng đơn vị lên $1$ đơn vị thì ta nhận được số mới gấp $4$ lần số ban đầu.
+%	\textbf{\color{toancuabi}\color{toancuabi}Bài $\pmb1$.} Tìm một số có $3$ chữ số mà khi tăng chữ số hàng trăm lên $3$ đơn vị, chữ số hàng chục lên $2$ đơn vị và chữ số hàng đơn vị lên $1$ đơn vị thì ta nhận được số mới gấp $4$ lần số ban đầu.
 %	\vskip 0.1cm
-%	\textbf{\color{toancuabi}Bài $\pmb2$.} Trên bảng có viết số $798798798798$. Bạn cần xóa đi một hoặc vài chữ số để kết quả nhận được là một số chia hết cho $9$. Hỏi số lớn nhất mà bạn có thể nhận được là bao nhiêu?
+%	\textbf{\color{toancuabi}\color{toancuabi}Bài $\pmb2$.} Trên bảng có viết số $798798798798$. Bạn cần xóa đi một hoặc vài chữ số để kết quả nhận được là một số chia hết cho $9$. Hỏi số lớn nhất mà bạn có thể nhận được là bao nhiêu?
 %	\vskip 0.1cm
-%	\textbf{\color{toancuabi}Bài $\pmb3$.} Năm học $2022-2023$ là một năm học đặc biệt: không thể đổi chỗ các chữ số của số $2022$ để có một số nhỏ hơn $2022$ và số $2023$ cũng như vậy. (Các số không được bắt đầu bằng chữ số $0$). Hỏi năm học nào gần nhất trước đó cũng đặc biệt như vậy?
+%	\textbf{\color{toancuabi}\color{toancuabi}Bài $\pmb3$.} Năm học $2022-2023$ là một năm học đặc biệt: không thể đổi chỗ các chữ số của số $2022$ để có một số nhỏ hơn $2022$ và số $2023$ cũng như vậy. (Các số không được bắt đầu bằng chữ số $0$). Hỏi năm học nào gần nhất trước đó cũng đặc biệt như vậy?
 %	\vskip 0.1cm
-%	\textbf{\color{toancuabi}Bài $\pmb4$.} Hãy đưa ra ví dụ $5$ số hữu tỷ phân biệt nằm giữa $\dfrac{1}{2022}$ và $\dfrac{1}{2023}.$
+%	\textbf{\color{toancuabi}\color{toancuabi}Bài $\pmb4$.} Hãy đưa ra ví dụ $5$ số hữu tỷ phân biệt nằm giữa $\dfrac{1}{2022}$ và $\dfrac{1}{2023}.$
 %	\vskip 0.1cm
-%	\textbf{\color{toancuabi}Bài $\pmb5$.} Có bao nhiêu số có $3$ chữ số khác nhau, chia hết cho $11$, được tạo thành từ các chữ số $1,3,5,7,9$?
+%	\textbf{\color{toancuabi}\color{toancuabi}Bài $\pmb5$.} Có bao nhiêu số có $3$ chữ số khác nhau, chia hết cho $11$, được tạo thành từ các chữ số $1,3,5,7,9$?
 %	\vskip 0.1cm
-%	\textbf{\color{toancuabi}Bài $\pmb6$.} Tìm số tự nhiên $n$  nhỏ nhất sao cho $(n + 1)( n + 2)( n + 3)( n + 4)$ chia hết cho $1000$.
+%	\textbf{\color{toancuabi}\color{toancuabi}Bài $\pmb6$.} Tìm số tự nhiên $n$  nhỏ nhất sao cho $(n + 1)( n + 2)( n + 3)( n + 4)$ chia hết cho $1000$.
 %	\vskip 0.1cm
-%	\textbf{\color{toancuabi}Bài $\pmb7$.} Tom viết tất cả các số tự nhiên sao cho tích các chữ số của mỗi số bằng $2016$. Jerry chọn số nhỏ nhất trong chúng. Hỏi Jerry đã chọn số nào?
+%	\textbf{\color{toancuabi}\color{toancuabi}Bài $\pmb7$.} Tom viết tất cả các số tự nhiên sao cho tích các chữ số của mỗi số bằng $2016$. Jerry chọn số nhỏ nhất trong chúng. Hỏi Jerry đã chọn số nào?
 %	\vskip 0.1cm
-%	\textbf{\color{toancuabi}Bài $\pmb8$.} Trong một giải đấu thể dục dụng cụ, mỗi vận động viên được hội đồng giám khảo gồm $7$ người chấm điểm. Mỗi giám khảo cho điểm là một số tự nhiên từ $1$ đến $10$. Sau đó, theo quy định, trong số các điểm mà $7$ giám khảo chấm thì một điểm cao nhất và một điểm thấp nhất sẽ bị loại bỏ (nếu có nhiều điểm cao nhất hoặc thấp nhất bằng nhau thì chỉ loại bỏ một trong số đó) và điểm số chính thức của vận động viên là tổng của $5$ điểm còn lại. Sau một màn trình diễn, một vận động viên được $7$ giám khảo cho tổng số điểm bằng $37$. Hỏi điểm số chính thức của vận động viên đó cao nhất có thể bằng bao nhiêu?
+%	\textbf{\color{toancuabi}\color{toancuabi}Bài $\pmb8$.} Trong một giải đấu thể dục dụng cụ, mỗi vận động viên được hội đồng giám khảo gồm $7$ người chấm điểm. Mỗi giám khảo cho điểm là một số tự nhiên từ $1$ đến $10$. Sau đó, theo quy định, trong số các điểm mà $7$ giám khảo chấm thì một điểm cao nhất và một điểm thấp nhất sẽ bị loại bỏ (nếu có nhiều điểm cao nhất hoặc thấp nhất bằng nhau thì chỉ loại bỏ một trong số đó) và điểm số chính thức của vận động viên là tổng của $5$ điểm còn lại. Sau một màn trình diễn, một vận động viên được $7$ giám khảo cho tổng số điểm bằng $37$. Hỏi điểm số chính thức của vận động viên đó cao nhất có thể bằng bao nhiêu?
 %	\vskip 0.1cm
-%	\textbf{\color{toancuabi}Bài $\pmb{9}$.} Nêu một cách điền các số $1$ và $-1$ vào các ô của một bảng $5\times 6$, mỗi ô một số, sao cho nếu lấy tổng của các số trên các hàng và các cột của bảng thì ta nhận được $11$ số khác nhau.
+%	\textbf{\color{toancuabi}\color{toancuabi}Bài $\pmb{9}$.} Nêu một cách điền các số $1$ và $-1$ vào các ô của một bảng $5\times 6$, mỗi ô một số, sao cho nếu lấy tổng của các số trên các hàng và các cột của bảng thì ta nhận được $11$ số khác nhau.
 %	\vskip 0.1cm
-%	\textbf{\color{toancuabi}Bài $\pmb{10}$.} Trên một hòn đảo nhỏ có $40$ cư dân gồm hai loại người: người Dối trá, luôn luôn nói dối và người Khôn ngoan, khi thì nói thật lúc lại nói dối. Một hôm tất cả các cư dân ngồi họp quanh một bàn tròn và mỗi người đều nói ``Ngồi sát bên cạnh tôi là một người Dối trá và một người Khôn ngoan". Biết rằng lần đó có đúng $3$ người Khôn ngoan nói dối. Hỏi trên đảo có tất cả bao nhiêu người Dối trá.
+%	\textbf{\color{toancuabi}\color{toancuabi}Bài $\pmb{10}$.} Trên một hòn đảo nhỏ có $40$ cư dân gồm hai loại người: người Dối trá, luôn luôn nói dối và người Khôn ngoan, khi thì nói thật lúc lại nói dối. Một hôm tất cả các cư dân ngồi họp quanh một bàn tròn và mỗi người đều nói ``Ngồi sát bên cạnh tôi là một người Dối trá và một người Khôn ngoan". Biết rằng lần đó có đúng $3$ người Khôn ngoan nói dối. Hỏi trên đảo có tất cả bao nhiêu người Dối trá.
 %	\vskip 0.1cm
-%	\textbf{\color{toancuabi}Đáp án}
+%	\textbf{\color{toancuabi}\color{toancuabi}Đáp án}
 %	\vskip 0.1cm
-%	\textbf{\color{toancuabi}Bài $\pmb{1}$.} $107$.
+%	\textbf{\color{toancuabi}\color{toancuabi}Bài $\pmb{1}$.} $107$.
 %	\vskip 0.05cm
-%	\textbf{\color{toancuabi}Bài $\pmb{2}$.} $9879879879$.
+%	\textbf{\color{toancuabi}\color{toancuabi}Bài $\pmb{2}$.} $9879879879$.
 %	\vskip 0.1cm
-%	\textbf{\color{toancuabi}Bài $\pmb{3}$.} $2008-2009$.
+%	\textbf{\color{toancuabi}\color{toancuabi}Bài $\pmb{3}$.} $2008-2009$.
 %	\vskip 0.1cm
-%	\textbf{\color{toancuabi}Bài $\pmb{4}$.} Bài toán có nhiều đáp án, một đáp án mẫu là: $\dfrac{10}{20221}; \dfrac{10}{20222}; \dfrac{10}{20223}; \dfrac{10}{20224}; \dfrac{10}{20225}.$
+%	\textbf{\color{toancuabi}\color{toancuabi}Bài $\pmb{4}$.} Bài toán có nhiều đáp án, một đáp án mẫu là: $\dfrac{10}{20221}; \dfrac{10}{20222}; \dfrac{10}{20223}; \dfrac{10}{20224}; \dfrac{10}{20225}.$
 %	\vskip 0.1cm
-%	\textbf{\color{toancuabi}Bài $\pmb{5}$.} $8$.
+%	\textbf{\color{toancuabi}\color{toancuabi}Bài $\pmb{5}$.} $8$.
 %	\vskip 0.1cm
-%	\textbf{\color{toancuabi}Bài $\pmb{6}$.} $121$.
+%	\textbf{\color{toancuabi}\color{toancuabi}Bài $\pmb{6}$.} $121$.
 %	\vskip 0.1cm
-%	\textbf{\color{toancuabi}Bài $\pmb{7}$.} $4789$.
+%	\textbf{\color{toancuabi}\color{toancuabi}Bài $\pmb{7}$.} $4789$.
 %	\vskip 0.1cm
-%	\textbf{\color{toancuabi}Bài $\pmb{8}$.} \textit{Lời giải.}
+%	\textbf{\color{toancuabi}\color{toancuabi}Bài $\pmb{8}$.} \textit{Lời giải.}
 %	Một mặt, điếm số thấp nhất không ít hơn $1$. Mặt khác, do tổng điểm của $7$ giám khảo bằng $37$ nên có một giám khảo cho điểm từ $6$ trở lên (nếu không, tổng số điểm của $7$ giám khảo không vượt quá $7\times 5=35$). Như vậy, tổng điểm của giám khảo cho thấp nhất và cao nhất không ít hơn $1+ 6=7$. Chính vì vậy, điểm chính thức của vận động viên cao nhất là $37-7=30$. Đảo lại, nếu các giám khảo cho điểm là $1, 6, 6, 6, 6, 6, 6$ thì điểm chính thức của vận động viên đúng bằng $30$.
 %	Đáp số $30$.
 %	\vskip 0.1cm
-%	\textbf{\color{toancuabi}Bài $\pmb{9}$.} \textit{Lời giải.} Một ví dụ
+%	\textbf{\color{toancuabi}\color{toancuabi}Bài $\pmb{9}$.} \textit{Lời giải.} Một ví dụ
 %	\begin{center}
 %		\begin{tikzpicture}
 %			\draw (0,0) grid (6, 5);
@@ -304,7 +316,7 @@
 %			\node at (6.5,4.5){$-4$};
 %		\end{tikzpicture}
 %	\end{center}
-%\textbf{\color{toancuabi}Bài $\pmb{10}$.} \textit{Lời giải.} Nhận xét rằng nếu có $2$ người Dối trá ngồi cạnh nhau thì bên cạnh những người này phải đều là những người Dối trá. Và cứ tiếp tục như vậy thì không bao giờ xuất hiện người Khôn Ngoan, điều này là vô lý. Do đó giữa $2$ người Dối trá luôn có ít nhất $1$ người Khôn ngoan.
+%\textbf{\color{toancuabi}\color{toancuabi}Bài $\pmb{10}$.} \textit{Lời giải.} Nhận xét rằng nếu có $2$ người Dối trá ngồi cạnh nhau thì bên cạnh những người này phải đều là những người Dối trá. Và cứ tiếp tục như vậy thì không bao giờ xuất hiện người Khôn Ngoan, điều này là vô lý. Do đó giữa $2$ người Dối trá luôn có ít nhất $1$ người Khôn ngoan.
 %\vskip 0.1cm
 %Ta thấy rằng chỉ có đúng $2$ trường hợp mà một người Khôn Ngoan nói dối:
 %\vskip 0.1cm
@@ -581,7 +593,7 @@
 %	This article is the second part of the series on demonstration \textit{Proof by Contradiction}.
 %	\vskip 0.2cm
 %	\PIbox{
-%	\textbf{\color{toancuabi}\color{toancuabi}\color{toancuabi}Example $\pmb6$.}
+%	\textbf{\color{toancuabi}\color{toancuabi}\color{toancuabi}\color{toancuabi}Example $\pmb6$.}
 %	Twenty--five persons from $8$ different provinces elected to the National Congress.
 %	Prove that at least $4$ of them are from the same province.}
 %	\vskip 0.2cm
@@ -590,7 +602,7 @@
 %	In this case, not more than $3$ persons are from the $1^{\text{st}}$ province, not more than $3$ from the $2^{\text{nd}}$, and so on.
 %	Altogether, there are not more than $3 \times 8 = 24$ persons. This contradicts the fact that there are $25$ persons.
 %	\vskip 0.2cm
-%	\PIbox{\textbf{\color{toancuabi}\color{toancuabi}\color{toancuabi}Example $\pmb7$.}
+%	\PIbox{\textbf{\color{toancuabi}\color{toancuabi}\color{toancuabi}\color{toancuabi}Example $\pmb7$.}
 %	At the graduation event of the School of Wizardry, $5$ outstanding students called to the podium.
 %	They standing in a row. Altogether, these $5$ students know $300$ different spells.
 %	Prove that there are $2$ students standing next to each other who, if combined, know at least $100$ spells.}
@@ -600,7 +612,7 @@
 %	and the $4^{\text{th}}$ and $5^{\text{th}}$ students together know less than $100$ spells.
 %	Then these four know less than $200$ spells together. In this case, the $3^{\text{rd}}$ student knows more than $100$ spells.
 %	\vskip 0.2cm
-%	\PIbox{\textbf{\color{toancuabi}\color{toancuabi}\color{toancuabi}Example $\pmb8$.}
+%	\PIbox{\textbf{\color{toancuabi}\color{toancuabi}\color{toancuabi}\color{toancuabi}Example $\pmb8$.}
 %	The only way to travel in the Kingdom of so many swamps is to use magic carpets.
 %		Twenty--one carpet--transportation \,lines \,\,serve \,\,the \,\,capital. \,A 
 %	}
@@ -613,7 +625,7 @@
 %		But this is not true. If we count the lines among these cities, then they have to be counted twice, thus it is an even number.
 %		This contradiction means Tinyville is connected to the capital.
 %	\vskip 0.2cm
-%	\PIbox{\textbf{\color{toancuabi}\color{toancuabi}\color{toancuabi}Example $\pmb9$.}
+%	\PIbox{\textbf{\color{toancuabi}\color{toancuabi}\color{toancuabi}\color{toancuabi}Example $\pmb9$.}
 %		The game of Trick--a--Troll is played with $10$ players and a deck of $20$ cards:
 %		$2$ through $10$ and an ace of spades, and $2$ through $10$ and an ace of clubs.
 %		Each player gets $1$ club and $1$ spade and adds his cards (aces count as $1$).
@@ -624,7 +636,7 @@
 %	If we assume that all players had different last digits for their sums, then all $10$ digits would be present, and the sum of them all would end with a $5$.
 %	On the other hand, the sum of the values of all cards in play ends with a $0$, a contradiction.
 %	\vskip 0.2cm
-%	\PIbox{\textbf{\color{toancuabi}\color{toancuabi}\color{toancuabi}Example $\pmb10$.}
+%	\PIbox{\textbf{\color{toancuabi}\color{toancuabi}\color{toancuabi}\color{toancuabi}Example $\pmb10$.}
 %	At each of the vertices of a regular hexagon there stands a grasshopper.
 %		At the same time, all six grasshoppers jump off the ground. They land at the same time,
 %		each at one of the vertices. No two grasshoppers land at the same vertex.
@@ -642,7 +654,7 @@
 %		\vspace*{-5pt}
 %		\centering
 %		\captionsetup{labelformat= empty, justification=centering}
-%		\begin{tikzpicture}[toancuabi, scale=0.4, node font=\scriptsize]
+%		\begin{tikzpicture}[toancuabi, scale = 0.4 scale=0.4, node font=\scriptsize]
 %			\fill[fill=cackithi!40] (3.8660254037844397,2.767949192431121) -- (2.,4.) -- (0.,3.) -- cycle;
 %			\fill[fill=cackithi!40] (9.732050807568879,0.5358983848622445) -- (9.866025403784441,2.7679491924311215) -- (6.,3.) -- cycle;
 %			\fill[fill=cackithi!40] (15.866025403784441,2.7679491924311215) -- (13.732050807568879,-0.4641016151377553) -- (12.,3.) -- cycle;
