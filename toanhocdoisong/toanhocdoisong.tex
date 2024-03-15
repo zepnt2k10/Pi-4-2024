@@ -5,376 +5,204 @@
 \blfootnote{$^1$\color{toanhocdoisong}Hà Nội.}
 \begingroup
 \AddToShipoutPicture*{\put(0,616){\includegraphics[width=19.3cm]{../bannertoanhocdoisong}}}
-\AddToShipoutPicture*{\put(120,525){\includegraphics[scale=1]{../tieude.pdf}}}
+\AddToShipoutPicture*{\put(90,522){\includegraphics[scale=1]{../tieude.pdf}}}
 \centering
 \endgroup
 
-\vspace*{182pt}
+\vspace*{185pt}
 
 \begin{multicols}{2}
-	Việc tính diện tích các miền có dạng đa giác là một hoạt động thường thấy trong đời sống và sản xuất, đặc biệt là với ngành trắc địa. Trong bài viết này, chúng ta hãy cùng tìm hiểu một phương pháp giải bài toán trên dựa vào ``công thức dây giày" cùng một số ứng dụng thú vị khác của công thức này.
+	Khái niệm số thập phân cũng như cách thức tính toán với chúng đã trở nên quá quen thuộc với chúng ta trong mọi mặt của đời sống. Trong bài viết này, chúng ta hãy cùng tìm hiểu việc phổ biến của số thập phân đã diễn ra như thế nào cùng một số vấn đề thực tiễn đã thúc đẩy việc sử dụng nó trong nhiều lĩnh vực khác nhau.
 	\vskip 0.1cm
-	$\pmb{1.}$ \textbf{\color{toanhocdoisong}Trắc địa sử dụng bàn mặt phẳng}
-	\vskip 0.1cm
-	Trước khi đi sâu vào phương pháp toán học cụ thể để tính diện tích đa giác khi biết tọa độ các đỉnh, chúng ta hãy cùng tìm hiểu cách để thu được vị trí tọa độ các đỉnh của một mảnh đất hình đa giác. Với các công cụ trắc địa hiện đại ngày nay, có nhiều cách thức khác nhau để làm việc này. Tuy nhiên, phần này sẽ trình bày về một công cụ trắc địa có lịch sử tương đối lâu đời: bàn mặt phẳng.
-	\vskip 0.1cm
-	Bàn mặt phẳng bao gồm một mặt bàn phẳng được đỡ bởi ba chân bàn có thể điều chỉnh được. Kết nối giữa mặt bàn và các chân được thiết kế sao cho mặt bàn có thể quay tự do trong mặt phẳng ngang, đồng thời mặt bàn cũng có thể được điều chỉnh cho song song với mặt đất dựa vào một thiết bị căn chỉnh nào đó, ví dụ một ống bọt nước. Việc chỉnh cho bàn song song với mặt đất là rất quan trọng để đảm bảo tính chính xác của các đo đạc tiếp theo.
-	\vskip 0.1cm
-	Trên mặt bàn người ta cố định một tờ giấy phẳng. Khi tiến hành đo đạc, mỗi điểm đo đạc trên thực địa sẽ ứng với vị trí tương ứng trên tờ giấy. Để đảm bảo sự tương ứng này khi sử dụng, một kẹp chữ U có buộc dây dọi được gá vào bàn để cho điểm ở trên tờ giấy thẳng hàng đúng với điểm ở trên mặt đất.
+	$\pmb{1.}$ \textbf{\color{toanhocdoisong}Simon Stevin và De Thiende }
 	\begin{figure}[H]
 		\vspace*{-5pt}
 		\centering
 		\captionsetup{labelformat= empty, justification=centering}
-		\includegraphics[height= 0.5\linewidth]{1}
-		\includegraphics[height= 0.5\linewidth]{2}
-		\caption{\small\textit{\color{toanhocdoisong}Hình $1$. Trái: bàn mặt phẳng và các dụng cụ đi kèm. Phải: cách sử dụng công cụ dây dọi đi kèm bàn mặt phẳng.}}
+		\includegraphics[width= 0.7\linewidth]{1}
+		\caption{\small\textit{\color{toanhocdoisong}Simon Stevin $(1548-1620)$.}}
 		\vspace*{-10pt}
 	\end{figure}
-	Tại mỗi một vị trí, người ta sử dụng một thước ngắm để gióng hàng giữa vị trí hiện tại và cọc cắm vị trí được xác định trước đó.
+	Simon Stevin sinh năm $1548$ ở Bruges (nay thuộc Bỉ). Năm $28$ tuổi, ông bắt đầu làm việc cho văn phòng thuế của thành phố rồi chuyển đến Leiden vài năm sau. Sau khi xuất bản một cuốn sách về lãi suất và một cuốn sách về hình học, năm $1583$ Stevin theo học tại đại học Leiden, vừa mới được thành lập trước đó vài năm khi Hà Lan bắt đầu phong trào đòi độc lập khỏi vương triều Habsburg của Tây Ban Nha. Trong thời gian học tại Leiden cũng như giai đoạn sau đó, Stevin viết sách về nhiều đề tài đa dang, bao gồm toán học, vật lý (đặc biệt về tĩnh học và áp suất), kinh tế, quân sự và hàng hải. Stevin là một trong những nhân vật có đóng góp quan trọng trong việc hình thành và phát triển của nước cộng hòa Hà Lan giai đoạn cuối thế kỷ $16$, đầu thế kỷ $17$.
+	
+	Tác phẩm \textit{De Thiende} (Nghĩa đen: Phần mười) của Stevin được xuất bản năm $1585$. Nó chỉ có $37$ trang nhưng lại có ý nghĩa rất quan trọng về mặt lịch sử bởi đây là cuốn sách đầu tiên phổ cập cách tính toán sử dụng số thập phân. Trước đó, \textit{Liber abaci} của Fibonacci sử dụng cách quy đổi hỗn số về phân số rồi chuyển ngược lại về hỗn số khi xử lý các bài toán có liên quan đến các số có phần không nguyên. Stevin đã đưa ra một cách viết số mới của mình để đơn giản hóa cách tính toán. Ví dụ, số mà ngày nay ta ký hiệu là $8,937$ được Stevin viết thành \linebreak $8$ \begin{tikzpicture}[toanhocdoisong, node font= \scriptsize]
+		\draw (0,0) node[inner sep=0.5pt, draw,circle] {$0$};
+	\end{tikzpicture}$9$\begin{tikzpicture}[toanhocdoisong, node font= \scriptsize]
+	\draw (0,0) node[inner sep=0.5pt, draw,circle] {$1$};
+\end{tikzpicture}$3$\begin{tikzpicture}[toanhocdoisong, node font= \scriptsize]
+\draw (0,0) node[inner sep=0.5pt, draw,circle] {$2$};
+\end{tikzpicture}$7$\begin{tikzpicture}[toanhocdoisong, node font= \scriptsize]
+\draw (0,0) node[inner sep=0.5pt, draw,circle] {$3$};
+\end{tikzpicture}. \begin{tikzpicture}[toanhocdoisong, node font= \scriptsize]
+\draw (0,0) node[inner sep=0.5pt, draw,circle] {$0$};
+\end{tikzpicture} có nghĩa rằng chữ số $8$ không được nhân với phân số nào, $9$\begin{tikzpicture}[toanhocdoisong, node font= \scriptsize]
+\draw (0,0) node[inner sep=0.5pt, draw,circle] {$1$};
+\end{tikzpicture} tương đương với $\dfrac{9}{10}$, $3$\begin{tikzpicture}[toanhocdoisong, node font= \scriptsize]
+\draw (0,0) node[inner sep=0.5pt, draw,circle] {$2$};
+\end{tikzpicture} tương đương với $\dfrac{3}{100}$ còn $7$\begin{tikzpicture}[toanhocdoisong, node font= \scriptsize]
+\draw (0,0) node[inner sep=0.5pt, draw,circle] {$3$};
+\end{tikzpicture} tương đương với $\dfrac{7}{1000}$. Cộng tổng của các thành phần này ta được hỗn số $8 \dfrac{937}{1000}$. Cách viết này thuận tiện ở chỗ việc cộng trừ nhân chia các số dạng này cũng tương tự như với số tự nhiên bởi bản thân các số tự nhiên viết theo kiểu Arab cũng có một đơn vị của hàng sau bằng $\dfrac{1}{10}$ một đơn vị của hàng đứng trước. Ví dụ, một phép cộng được thực hiện như dưới đây:
+\begin{figure}[H]
+	\vspace*{-5pt}
+	\centering
+	\captionsetup{labelformat= empty, justification=centering}
+	\begin{tikzpicture}[toanhocdoisong]
+		\draw (0,0) node {$9$};
+		\draw (1,0) node {$4$};
+		\draw (2,0) node {$1$};
+		\draw (3,0) node {$3$};
+		\draw (4,0) node {$0$};
+		\draw (5,0) node {$4$};
+		
+		\draw[dashed]  (-0.1,0.6) -- (5.1,0.6);
+		\draw (0,1) node {$8$};
+		\draw (1,1) node {$7$};
+		\draw (2,1) node {$5$};
+		\draw (3,1) node {$7$};
+		\draw (4,1) node {$8$};
+		\draw (5,1) node {$2$};
+		
+		\draw (1,2) node {$3$};
+		\draw (2,2) node {$7$};
+		\draw (3,2) node {$7$};
+		\draw (4,2) node {$7$};
+		\draw (5,2) node {$7$};
+		
+		\draw (1,3) node {$2$};
+		\draw (2,3) node {$7$};
+		\draw (3,3) node {$8$};
+		\draw (4,3) node {$4$};
+		\draw (5,3) node {$7$};
+		
+		\draw (2,4) node[inner sep=0.5pt, draw,circle] {$0$};
+		\draw (3,4) node[inner sep=0.5pt, draw,circle] {$1$};
+		\draw (4,4) node[inner sep=0.5pt, draw,circle] {$2$};
+		\draw (5,4) node[inner sep=0.5pt, draw,circle] {$3$};
+	\end{tikzpicture}
+	\vspace*{-10pt}
+\end{figure}
+	Cách làm này cũng không khác gì cách mà ngày nay ta cộng $27,847$ với $37,675$. Stevin cũng xét đến trường hợp có thành phần ứng với một phân số thập phân có giá trị bằng $0$, ví dụ như:
+\begin{figure}[H]
+	\vspace*{-5pt}
+	\centering
+	\captionsetup{labelformat= empty, justification=centering}
+	\begin{tikzpicture}[toanhocdoisong]
+		\draw (0,0) node {$1$};
+		\draw (1,0) node {$3$};
+		\draw (2,0) node {$6$};
+		\draw (3,0) node {$3$};
+		
+		\draw[dashed]  (-0.1,0.6) -- (3.1,0.6);
+		\draw (1,1) node {$5$};
+		\draw (2,1) node {$0$};
+		\draw (3,1) node {$7$};
+		
+		\draw (1,2) node {$8$};
+		\draw (2,2) node {$5$};
+		\draw (3,2) node {$6$};
+		
+		\draw (1,3) node[inner sep=0.5pt, draw,circle] {$0$};
+		\draw (2,3) node[inner sep=0.5pt, draw,circle] {$1$};
+		\draw (3,3) node[inner sep=0.5pt, draw,circle] {$2$};
+	\end{tikzpicture}
+	\vspace*{-10pt}
+\end{figure}	
+	Đồng thời, Stevin cũng trình bày cách tính căn của một số thập phân như một dạng mở rộng của việc tính căn của một số tự nhiên.
 	\vskip 0.1cm
-	Khi đã gióng hàng xong, một đường thẳng tương ứng cũng được kẻ trên tờ giấy ở mặt bàn theo đúng phương đã được gióng. Khoảng cách giữa điểm đo mới và điểm đo cũ sẽ bằng đúng khoảng cách thực địa nhân với tỷ lệ xích. Khoảng cách thực địa giữa hai điểm có thể được đo trực tiếp bằng thước dây
-	\begin{figure}[H]
-		\vspace*{5pt}
-		\centering
-		\captionsetup{labelformat= empty, justification=centering}
-		\includegraphics[width= 1\linewidth]{3}
-		\caption{\small\textit{\color{toanhocdoisong}Hình $2$. Bàn mặt phẳng với thước ngắm.}}
-		\vspace*{-10pt}
-	\end{figure}
-	hoặc một số phương pháp khác. Một số bàn mặt phẳng sử dụng các ống ngắm có vết đánh dấu còn có thể cho phép xác định khoảng cách bằng các cọc tiêu có chia vạch mà không cần phải nối dây giữa hai điểm. 
-	\vskip 0.2cm
-	\PIbox{
+	Khác với thông lệ về sách khoa học đương thời, \textit{De Thiende} được viết bằng tiếng Hà Lan thay vì tiếng Latin. Stevin muốn cuốn sách của mình có thể được phổ biến rộng rãi nhất chứ không phải chỉ trong giới học thuật. Bản thân ông cũng tự dịch cuốn sách này sang tiếng Pháp cùng năm với bản tiếng Hà Lan. Một thời gian sau, phiên bản tiếng Đan Mạch và phiên bản tiếng Anh cũng lần lượt được xuất bản vào các năm $1602$ và $1608$.
+	\vskip 0.1cm
+	$\pmb{2.}$ \textbf{\color{toanhocdoisong}Tiền tệ và đo lường}
+	\vskip 0.1cm
+	\textit{De Thiende} không phải là một cuốn sách toán học thuần túy. Nó thuộc dòng sách về số học phục vụ tính toán trong các lĩnh vực khác nhau như tính diện tích đất đai, tính sổ sách thương nghiệp hay đo đạc phục vụ buôn bán (lương thực, rượu vang, vải vóc, ...). Stevin cho rằng việc sử dụng số thập phân sẽ giúp các công việc này được thực hiện một cách dễ dàng hơn nhiều. Tuy nhiên, điều kiện để việc này có thể được thực hiện là các đơn vị đo cũng phải được chuẩn hóa sao cho việc quy đổi các đại lượng đo được về số thập phân là dễ dàng. 
+	\vskip 0.1cm
+	Chẳng hạn, để đo độ dài, lúc đó người ta vẫn sử dụng các đại lượng dựa trên các đặc điểm cơ thể người: ngón cái, bàn chân, cánh \linebreak tay, ... Tuy nhiên, độ dài chuẩn của các đại lượng này luôn là vấn đề, chúng khác nhau giữa các thành phố, ngay cả cùng trong một đất nước như Hà Lan nơi Stevin sinh sống. Tình trạng tương tự cũng xảy ra với các đơn vị đo khối lượng.
+	\vskip 0.1cm
+	Stevin đã đưa ra ý tưởng lấy một đơn vị đo độ dài/khối lượng làm chuẩn và các đơn vị đo khác sẽ gấp $10, 100, 1000, \ldots$ lần đơn vị này hoặc bằng $1/10, 1/100, 1/1000, \ldots$ của nó. Khi đó, giá trị đo của các đại lượng thực tiễn có thể được thống nhất về cùng một chuẩn và quy đổi lẫn nhau sử dụng số thập phân. Việc tính toán với các đại lượng này cũng sẽ có thể được tiến hành dễ dàng hơn nhiều.
+	\vskip 0.1cm
+	Tuy rằng \textit{De Thiende} được in ấn và phổ biến ở nhiều nước châu Âu, ý tưởng đi trước thời đại này của Stevin về việc chuẩn hóa đơn vị đo sử dụng hệ thập phân chỉ được thực hiện sau đó hai thế kỷ. Ngay sau thành công của cách mạng Pháp (năm $1789$), Viện hàn lâm khoa học Pháp được yêu cầu chuẩn bị một hệ thống đo lường mới để tất cả các công dân của nước cộng hòa có thể sử dụng. Nó cần có các đơn vị chuẩn từ các đại lượng không biến thiên trong tự nhiên còn các đơn vị khác có thể được biểu diễn theo các đơn vị chuẩn này sử dụng hệ thập phân. Các nhà toán học nổi tiếng như Laplace và Lagrange cũng nằm trong hội đồng đề xuất đơn vị mới này. Năm $1799$, các đơn vị mới là mét và kilogram cũng đã ra đời, kèm theo là các đơn vị sinh ra từ các đơn vị này với các tiền tố centi, deca, \linebreak milli, ... Quá trình hoàn thiện hệ thống các đơn vị đo vẫn liên tục diễn ra với sự ra đời của hệ SI (Système International D'Unités) năm $1960$ và phiên bản chỉnh sửa năm $2019$. 
 	\begin{figure}[H]
 		\vspace*{-5pt}
 		\centering
 		\captionsetup{labelformat= empty, justification=centering}
+		\includegraphics[width= 0.95\linewidth]{2}
+		\caption{\small\textit{\color{toanhocdoisong}Hình $1$. Áp phích của chính phủ cách mạng  Pháp về việc sử dụng các đơn vị đo mới trong các lĩnh vực hàng ngày của đời sống. Việc chuyển đổi từ các đơn vị cũ sang mét và kilogram gặp nhiều khó khăn do các thói quen cũ khó biến mất ngay và cần sự thúc đấy lâu dài trong vài thập kỷ.}}
+		\vspace*{-5pt}
+	\end{figure}
+	\vskip 0.1cm
+	\PIbox{Để giảm bớt số số $0$ khi viết số thập phân, ta có thể dùng kết hợp số thập phân với các lũy thừa của $10$ khi đổi đơn vị. Ví dụ $4,1\mu m = 4,1 \times 10^{-6}m$. Cách viết này cũng giúp cho việc tính toán các đại lượng trong vật lý được thuận tiện hơn khi phần lũy thừa và phần thập phân có thể được nhân chia riêng rẽ.}
+	\vskip 0.3cm
+	Bên cạnh đo lường, Stevin cũng đề xuất một cải cách về tiền tệ trong \textit{De Thiende}. Trước đó, dưới thời cai trị của Tây Ban Nha, một đồng guilder vàng tương đương với $20$ đồng stuiver và mỗi đồng stuiver lại tương đương $8$ duiten hoặc $16$ penningen. Trong thời kỳ cách mạng Hà Lan, hệ thống tiền tệ lại càng hỗn loạn hơn giữa các đồng tiền đúc bằng vàng, bạc hoặc đồng. Stevin cho rằng cần có một hệ thống tiền tệ thống nhất với các đơn vị tổ chức theo hệ thập phân để thuận lợi hơn cho trao đổi và buôn bán. 
+	\vskip 0.1cm
+	Đề xuất về tiền tệ này của Stevin đã được thực hiện đầu tiên ở Mỹ dưới sự thúc đẩy của Thomas Jefferson. Sau khi giành độc lập khỏi đế quốc Anh vào năm $1776$, $13$ bang của nước Mỹ lúc đó vẫn dùng các loại tiền tệ khác nhau của Anh và Tây Ban Nha. Một bảng Anh (pound) bằng với $20$ shiling và một shiling bằng với $12$ xu. Tương tự, một đồng reale của Tây Ban Nha sẽ tương đương với $8$ đồng nhỏ hơn. Sự hỗn loạn về tiền tệ này gây rất nhiều khó khăn cho việc trao đổi và buôn bán trong giai đoạn mới hình thành của nước Mỹ. Thomas Jefferson, tác giả của Tuyên ngôn độc lập của Mỹ, cùng với Alexander Hamilton và Robert Morris, đã đề xuất ra hệ thống tiền tệ mới dựa trên công trình của Stevin. Năm $1785$, đồng dollar trở thành đơn vị tiền tệ của toàn nước Mỹ. Các đơn vị tiền tệ khác là disme ($\dfrac{1}{10}$ dollar tức $10$ xu) và xu (tức cent, $\dfrac{1}{100}$ dollar) được chỉ định vào năm $1792$. Các đồng tiền đúc bằng bạc đầu tiên của Mỹ là các đồng $\dfrac{1}{2}$ disme (tương đương với $\dfrac{1}{20}$ dollar). Sau này, nhiều khu vực khác nhau trên thế giới cũng dần chuyển sang hệ thống tiền tệ sử dụng hệ thập phân tương tự như nước Mỹ. Viễn cảnh về một đồng tiền sử dụng chung cho một khu vực địa lý lớn ở châu Âu của Stevin cũng thành hiện thực với sự ra đời của đồng Euro chung cho các nước EU.
+	\vskip 0.3cm
+	\PIbox{Khi tự dịch \textit{De Thiende} sang tiếng Pháp, Stevin chuyển tên tác phẩm là La Disme. Sau này, khi Robert Norton dịch tác phẩm này ra tiếng Anh, thuật ngữ Disme được giữ nguyên để chỉ một phần mười. Tên gọi của đồng disme tại Mỹ cũng xuất phát từ đây. Đến thế kỷ $19$, nó được viết thành dime như ta thấy trong tiếng Anh Mỹ hiện đại.
+	\begin{figure}[H]
+		\vspace*{-5pt}
+		\centering
+		\captionsetup{labelformat= empty, justification=centering}
+		\includegraphics[height= 0.4\linewidth]{3}
 		\includegraphics[height= 0.4\linewidth]{4}
-		\includegraphics[height= 0.4\linewidth]{5}
-%		\caption{\small\textit{\color{}}}
-		\vspace*{-10pt}
+		\caption{\small\textit{\color{toanhocdoisong}Trái: Đồng $10$ xu (dime) của Mỹ. Phải: Đồng $1$ xu của Mỹ với chân dung của Jefferson.}}
+%		\vspace*{-10pt}
 	\end{figure}
-	Khi sử dụng ống ngắm có vạch đánh dấu (còn gọi là vạch \textit{stadia}) để quan sát các cọc tiêu có kẻ vạch, người ta có thể dựa vào khoảng cách quan sát được giữa hai vạch trên cọc để xác định được khoảng cách từ mắt đến cọc thông qua công thức tỷ lệ từ tam giác đồng dạng một cách thuận tiện.
 	}
+	\vskip 0.3cm
+	Một điều đáng chú ý là tuy Mỹ là nước đầu tiên áp dụng tiền tệ theo dạng thập phân như Stevin đề xuất, nó lại là thành trì cuối cùng trên thế giới không sử dụng rộng rãi hệ thống đo lường dạng thập phân của hệ SI. Thay vì mét và kilogram, các đơn vị từ thời đế quốc Anh như foot, yard, inch cho độ dài hay ounce và pound cho khối lượng vẫn là các đơn vị đo lường trong đời sống hàng ngày cũng như sách giáo khoa ở Mỹ. Trong thế kỷ $20$, đã có một số nỗ lực của các nhà khoa học để đưa hệ SI vào sử dụng ở Mỹ nhưng đều đã không thành công.
+	\vskip 0.1cm
+	\columnbreak
+	$\pmb{3.}$ \textbf{\color{toanhocdoisong}Dấu chấm hay dấu phẩy}
+	\vskip 0.1cm
+	Khi bàn về số thập phân, ta cũng không thể không nói đến sự phức tạp của việc ký hiệu nó theo cách khác nhau trên thế giới. Đây là một vấn đề có nguồn gốc lịch sử lâu dài. Tuy cuốn sách của Stevin đã phổ cập số thập phân đến nhiều đối tượng khác nhau, cách ký hiệu của ông lại tương đối lủng củng và nhiều cách ký hiệu khác đã được đưa ra. Dấu gạch đứng ``$\mid$" được Vieta sử dụng để tách phần nguyên khỏi phần thập phân vào cuối thế kỷ $16$. Sang thế kỷ $17$, trong cuốn sách dạy tính toán sử dụng logarith của mình, Napier sử dụng cả dấu chấm lẫn dấu phẩy một cách lẫn lộn ở những phần khác nhau của quyển sách. Trước Napier, việc sử dụng dấu chấm cho số thập phân cũng xuất hiện trong một cuốn sách về thiên văn xuất bản năm $1593$ của Chrisopher Clavius. Một nghiên cứu mới gần đây (đầu năm $2024$) cho thấy việc sử dụng dấu chấm để biểu diễn số thập phân trong thiên văn học ở châu Âu như Clavius đã làm có thể có nguồn gốc từ thế kỷ $15$ trong các công trình của Giovanni Bianchini và Regiomontanus. 
+	\begin{figure}[H]
+		\vspace*{-5pt}
+		\centering
+		\captionsetup{labelformat= empty, justification=centering}
+		\includegraphics[width= 1\linewidth]{5}
+		\caption{\small\textit{\color{toanhocdoisong}Hình $2$. Napier giải thích về số thập phân trong cuốn sách về logarith của ông. Ở trang sách này, dấu chấm được dùng để tách phần nguyên và phần thập phân.}}
+		\vspace*{-10pt}
+	\end{figure}
+	Trong thế kỷ $17$, nhiều cách ký hiệu khác bên cạnh dấu chấm và dấu phẩy cũng xuất hiện như viết phần thập phân cao lên giống như số mũ hiện nay, gạch chân phần thập phân, sử dụng dụng ``L" để tách hai phần, sử dụng dấu chấm phẩy, ... Đến thế kỷ $18$, các cách ký hiệu mới dần ổn định. Chỉ còn lại hai trường phái chính là dấu chấm và dấu phẩy. Do Leibniz sử dụng dấu chấm để biểu thị phép nhân, phần lớn các nhà toán học châu Âu đều sử dụng dấu phẩy để ký hiệu số thập phân. Còn ở nước Anh, ký hiệu ``$\times$" vẫn được dùng phổ biến cho phép nhân và dấu chấm được sử dụng nhiều hơn cho số thập phân.
+	\vskip 0.1cm
+	Đến thế kỷ $19$, người Anh bắt đầu sử dụng dấu chấm trong phép nhân. Để phân biệt, dấu chấm cho số thập phân được viết giữa hai dòng kẻ còn dấu chấm cho phép nhân được viết trên dòng kẻ (ngược với cách sử dụng dấu chấm ngày nay). Trong khi đó, ở Mỹ cả hai loại dấu chấm đều được viết trên dòng kẻ. Phải đến năm $1880$, dấu chấm cho phép nhân mới được đưa lên giữa dòng như ngày nay. Đến năm $1968$, nước Anh phải đảo hai dấu chấm về giống như Mỹ để tương thích với quy định của hệ SI cho số thập phân. Cũng vào thời điểm này, tiền tệ nước Anh cũng được thập phân hóa khi đồng bảng Anh được quy tương đương với $100$ xu và các đồng $5$ xu và $10$ xu cũng bắt đầu được lưu hành. Tuy nhiên, một số tạp chí khoa học của Anh vẫn yêu cầu tác giả viết số thập phân theo cách cũ cho đến nay. Hiện tại, ngoài Anh và Mỹ, dấu chấm cho số thập phân chỉ được sử dụng ở một số nước châu Phi. Các nước còn lại trên thế giới đều sử dụng dấu phẩy còn dấu chấm thì dùng cho phép nhân. Tuy nhiên, các ngôn ngữ lập trình hiện đại đều sử dụng dấu chấm để biểu diễn số thập phân. Sự lẫn lộn về dấu chấm và dấu phẩy cũng gây khó khăn khi dữ liệu dạng số được gửi từ nước này sang nước khác. Tuy các phần mềm bảng tính như Excel đều hộ trợ việc chuyển đổi này nhưng vẫn có những vấn đề xảy ra khi việc chuyển đổi bị lỗi.
+	\vskip 0.1cm
+	Ở nước ta, dấu phẩy vẫn luôn được dùng cho số thập phân và đã trở thành quen thuộc. Tuy nhiên, dấu chấm cho phép nhân vẫn bị viết xuống ngang dòng kẻ thay vì giữa dòng trong rất nhiều tài liệu, bao gồm cả các bộ sách giáo khoa Toán trước kia. Nguyên nhân là do không biết hoặc tùy tiện trong việc chế bản. Trong các sách giáo khoa hiện nay, đã có bộ sách chuyển dấu chấm của phép nhân về giữa dòng nhưng cũng có bộ chưa tiến hành chuyển đổi về dạng chuẩn.
+	\vskip 0.1cm
+	\PIbox{Một vấn đề có liên quan là việc tách cách hàng nghìn, hàng triệu, hàng tỷ, ... ở phần nguyên. Một số nước dùng dấu chấm trong khi một số nước dùng dấu phẩy cho tránh trùng lặp với ký tự biểu diễn số thập phân. Để tránh nhầm lẫn, một số tổ chức về quy chuẩn khuyến cáo sử dụng dấu cách cho mục đích này. Ví dụ $1$ tỷ sẽ viết thành $1\, 000\, 000\, 000$.}
+	\vskip 0.1cm
+	$\pmb{4.}$ \textbf{\color{toanhocdoisong}Stevin và Số thập phân vô hạn}
+	\vskip 0.1cm
+	Trong một cuốn sách khác mang tên \textit{L'Arithmetique} (Số học), Stevin đưa ra quan điểm của mình về thế nào là một số. Ngược với các quan niệm của toán học Hy Lạp cổ đại vẫn đang thịnh hành lúc đó, Stevin cho rằng tất cả các đại lượng đo được đều có thể biểu diễn bằng số, có thể là số nguyên, số hữu tỷ hay số vô tỷ. Ông cũng cho rằng không có gì kỳ lạ với các số như $\sqrt{2}$, chúng chỉ đơn giản là những số có bình phương bằng một số khác. 
+	\vskip 0.1cm
+	Stevin còn đưa ra một phương pháp rất hiện đại để tìm nghiệm dưới dạng số thập phân của một đa thức. Ví dụ, với phương trình $x^3=300x+33915024$ (các hệ số được chọn để cho thấy phương pháp có thể áp dụng với đa thức dạng tổng quát), Stevin chỉ ra rằng khi $x=100$ thì về trái nhỏ hơn còn khi $x=1000$ thì vế trái lớn hơn. Do đó, sẽ có một nghiệm nằm giữa $100$ và $1000$. Sau đó ông thử các giá trị $200, 300, \ldots$ và thu hẹp khoảng nghiệm về giữa $300$ và $400$. Tiếp tục theo cách này được nghiệm là $324$. Cách làm này cũng có thể cho ra nghiệm ở dạng số thập phân vô hạn. Ví dụ $x^3=300x+33900000$ có một nghiệm nằm giữa $323$ và $324$. Ta có thể xét các nghiệm $323,1; 323,2 \ldots$ để thu hẹp khoảng nghiệm. Cứ tiếp tục và ta có thể thu được nghiệm xấp xỉ với số chữ số mong muốn ở phần thập phân. Tư tưởng của Stevin có thể nói là rất gần với những phương pháp số giải gần đúng phương trình phi tuyến hiện nay.
+	\vskip 0.1cm
+	Bản thân Newton cũng nói rằng số thập phân vô hạn là ý tưởng để ông phát triển khái niệm chuỗi vô hạn. Mặt khác, cách tìm nghiệm trên của Stevin cũng gần với cách Cauchy chứng minh định lý giá trị trung gian nhưng thay vì chia khoảng $[a,b]$ thành $10$ phần thì Cauchy dùng cách chia nhị phân. Stevin cũng nhận định rằng các số là liên tục chứ không phải rời rạc. Tuy nhiên, về mặt lý thuyết, phải vài trăm năm sau thì các công trình nghiên cứu của Cantor và Dedekin mới cho ta một cách xây dựng chặt chẽ về tập hợp các số thực.
+	\vskip 0.1cm
+	\PIbox{
+	\textbf{\color{toanhocdoisong}Định lý giá trị trung gian}: Cho hàm số $f(x)$ liên tục trên khoảng $[a,b]$. Nếu $m$ là một số thỏa mãn $\min⁡\left(f(a),f(b)\right)<m< \max⁡\left(f(a),f(b)\right)$ thì tồn tại một số $c\in [a,b]$ sao cho $f(c)=m$.}
+	\vskip 0.1cm
+	$\pmb{5.}$ \textbf{\color{toanhocdoisong}Lời kết}
+	\vskip 0.1cm
+	Sự thuận tiện và đơn giản của số thập phân ngày nay làm cho chúng ta có cảm tưởng rằng nó là một phần sẵn có của toán học. Thế nhưng, đây lại là kết quả của một quá trình kéo dài với nhiều đóng góp của các nhà toán học ở các giai đoạn khác nhau. Theo một số nghiên cứu về lịch sử toán học, các cách ký hiệu số thập phân khác nhau cũng xuất hiện trong các bản thảo của al--Uqlidisi (thế kỷ $10$) và al--Kashi (đầu thế kỷ $15$) ở khu vực Trung đông. Tuy nhiên, \textit{De Thiende} của Stevin vẫn có giá trị lịch sử quan trọng nhất trong việc đưa số thập phân trở thành phổ biến bởi nó được viết không chỉ với mục đích toán học mà còn nhằm phục vụ cho đời sống, giúp cho các hoạt động thường ngày của con người diễn ra một cách dễ dàng hơn. Như đã thấy trong các số trước của Pi, Stevin còn có nhiều nghiên cứu ở các lĩnh vực khoa học khác nhau với các nghiên cứu về áp suất và trọng lực. Ông có những đóng góp không nhỏ trong việc thúc đẩy sự tiến bộ của toán học và khoa học ở châu Âu trong giai đoạn cuối của thời Phục Hưng.
+	\begin{figure}[H]
+		\vspace*{-5pt}
+		\centering
+		\captionsetup{labelformat= empty, justification=centering}
+		\includegraphics[width= 0.7\linewidth]{6}
+		\caption{\small\textit{\color{toanhocdoisong}Hình $3$. Tượng Simon Stevin ở Bruges (Bỉ ngày nay), nơi ông sinh ra và lớn lên.}}
+		\vspace*{-10pt}
+	\end{figure}
 	\vskip 0.2cm
-	Nhờ cơ chế trên mà bàn mặt phẳng có thể giúp nhân viên trắc địa lập được một bản đồ sơ bộ theo đúng tỷ lệ xích về vị trí giữa các điểm so với nhau. Việc khảo sát có thể được tiến hành theo nhiều  phương pháp khác nhau:
+	\PIbox{Ở Hà Lan, toán học vẫn được gọi tên bằng thuật ngữ mà Stevin đã sử dụng: wiskunde (khoa học về những điều chắc chắn).}
+	\vskip 0.2cm
+	\textbf{\color{toanhocdoisong}Tài liệu tham khảo}
 	\vskip 0.1cm
-	$\bullet$ Phương pháp tỏa: người sử dụng bàn mặt phẳng đứng ở một vị trí cố định và xác định vị trí tương đối của các cọc tiêu khác nhau so với vị trí này.
-	\begin{figure}[H]
-		\vspace*{5pt}
-		\centering
-		\captionsetup{labelformat= empty, justification=centering}
-		\includegraphics[width= 1\linewidth]{6}
-		\caption{\small\textit{\color{toanhocdoisong}Hình $3$. Phương pháp tỏa sử dụng bàn mặt phẳng để xác định tọa độ các vị trí từ một điểm cố định.}}
-		\vspace*{-10pt}
-	\end{figure}
-	$\bullet$ Phương pháp giao điểm: Trong trường hợp có một số điểm không đến được, vị trí của một điểm trên bản đồ được xác định bằng giao của hai đường thẳng từ hai điểm khác đến điểm này. Cách làm này thường sử dụng la bàn để đo độ lệch giữa phương nối hai điểm với hướng Bắc.
-	\begin{figure}[H]
-		\vspace*{-5pt}
-		\centering
-		\captionsetup{labelformat= empty, justification=centering}
-		\includegraphics[width= 1\linewidth]{7}
-		\caption{\small\textit{\color{toanhocdoisong}Hình $4$. Phương pháp giao điểm sử dụng bàn mặt phẳng từ một số vị trí để xác định tọa độ của các điểm còn lại.}}
-		\vspace*{-10pt}
-	\end{figure}
-	Phương pháp dịch chuyển: Ở mỗi một lần đo, bàn mặt phẳng lại được dịch chuyển đến một vị trí mới. Khi đó, khoảng cách và hướng từ nó đến vị trí cũ lại được đo đạc. Cứ mỗi lần như vậy, ta lại xác định được một cạnh của miền đa giác.
-	\begin{figure}[H]
-		\vspace*{5pt}
-		\centering
-		\captionsetup{labelformat= empty, justification=centering}
-		\includegraphics[width= 1\linewidth]{8}
-		\caption{\small\textit{\color{toanhocdoisong}Hình $5$. Phương pháp dịch chuyển xác định tọa độ các điểm bằng cách dịch chuyển bàn mặt phẳng và gióng lại điểm ngay trước. Các điểm trước hơn nữa cũng có thể được sử dụng để hiệu chỉnh khoảng cách.}}
-		\vspace*{-10pt}
-	\end{figure}
+	[$1$] Devreese, Jozef T, et al. \textit{``Magic Is No Magic" : The Wonderful World of Simon Stevin}. Southampton, Wit Press, $2009$.
 	\vskip 0.1cm
-	\begin{tBox}
-		\begin{wrapfigure}{l}{0.4\linewidth}
-			\vspace*{-15pt}
-			\centering
-			\captionsetup{labelformat= empty, justification=centering}
-			\includegraphics[width= 1\linewidth]{9}
-			%		\caption{\small\textit{\color{}}}
-			\vspace*{-20pt}
-		\end{wrapfigure}	
-		Một số nghiên cứu sinh học cho thấy loài kiến sa mạc (Cataglyphis fortis) cũng định vị bằng một cách tương tự như trên, chúng có thể xác định được hướng và khoảng cách giữa một số mốc cố định để không bị lạc đường trong sa mạc.
-	\end{tBox}
+	[$2$] E.J. Dijksterhuis. \textit{Simon Stevin}. Springer, $7$ Dec. $2011$.
 	\vskip 0.1cm
-	Bàn mặt phẳng xuất hiện từ giai đoạn cuối thể kỷ $16$, đầu thế kỷ $17$. Tuy rằng đã có nhiều công cụ tiên tiến hơn nhưng đặc tính đơn giản, thuận tiện, dễ sử dụng vẫn giúp bàn mặt phẳng được sử dụng trong nhiều trường hợp khác nhau khi tiến hành trắc địa.
+	[$3$] Ginsburg, Jekuthiel. ``On the Early History of the Decimal Point." \textit{The American Mathematical Monthly}, vol. $35$, no. $7$, $1$ Aug. $1928$, pp. $347-347$, \url{https://doi.org/10.2307/2298362.}
 	\vskip 0.1cm
-	$\pmb{2.}$ \textbf{\color{toanhocdoisong}Công thức dây giày: tính diện tích đa giác từ tọa độ các đỉnh}
+	[$4$] Giunta, Carmen J. \textit{A Brief History of the Metric System}. Springer Nature, $15$ Apr. $2023$.
 	\vskip 0.1cm
-	Như đã thấy ở phần trên, bằng một phương pháp trắc địa nào đó, ví dụ như bàn mặt phẳng, ta có thể thu được một bản đồ dạng tỷ lệ xích của miền đa giác, cũng như tọa độ các đỉnh của nó. Để tính diện tích miền đa giác này, một suy nghĩ thông thường là hãy chia nó thành các tam giác rồi tính diện tích từng tam giác này. Dù sao thì độ dài của mỗi cạnh có thể thu được bằng định lý Pythagoras và diện tích mỗi tam giác có thể được tính từ độ dài ba cạnh qua công thức Heron.
-	\vskip 0.1cm
-	Tuy nhiên, còn có cách tính diện tích nào với khối lượng tính toán ít hơn không? Nếu đã biết tọa độ của tất cả các đỉnh trong một hệ trục tọa độ Descartes, ta có thể tính diện tích đa giác theo công thức sau:
-	\begin{align*}
-		S \!=\! \dfrac{1}{2}\!\left(\begin{vmatrix}
-			x_1 \!&\!\! x_2\\
-			y_1 \!&\!\! y_2
-		\end{vmatrix} \!+\! \cdots \!+\! \begin{vmatrix}
-		x_{n-1} \!&\!\! x_n\\
-		y_{n-1} \!&\!\! y_n
-	\end{vmatrix} + \begin{vmatrix}
-	x_n \!&\!\! x_1\\
-	y_n \!&\!\! y_1
-	\end{vmatrix}\right)
-	\end{align*}
-	với ($x_i,y_i$) là tọa độ của đỉnh $A_i$ của đa giác $A_1 A_2 A_3\ldots A_n$.
-	\vskip 0.05cm
-	Ở đây, các định thức $2\times2$ có giá trị được tính theo công thức sau:
-	\begin{align*}
-		\begin{matrix}
-			a & b\\
-			c & d
-		\end{matrix} = ad - bc.
-	\end{align*}
-	\begin{figure}[H]
-		\vspace*{-5pt}
-		\centering
-		\captionsetup{labelformat= empty, justification=centering}
-		\includegraphics[width= 1\linewidth]{10}
-		\caption{\small\textit{\color{toanhocdoisong}Hình 6. Minh họa công thức dây giày.}}
-		\vspace*{-10pt}
-	\end{figure}
-	Đây còn gọi là công thức dây giày vì cách thức nhân chéo giống với cách buộc dây giày (Hình $6$). Nó còn được gọi là công thức tính diện tích của Gauss. Công thức này có nhiều cách chứng minh khác nhau. Ở đây, ta hãy cùng tìm hiểu một cách chứng minh tương đối đơn giản sử dụng các kiến thức toán sơ cấp.
-	\vskip 0.05cm
-	Xét hai vector $u$ và $v$ như trong Hình $7$. Góc $\theta$ khi quay từ $u$ đến $v$ sẽ dương khi chiều quay ngược kim đồng hồ và âm khi chiều quay cùng chiều kim đồng hồ. Ta có thể tính sinθ theo công thức lượng giác:
-	\begin{align*}
-		\sin\theta =& \sin(\theta_2 - \theta1)\\
-		= &\sin\theta_2\cos\theta_1 - \sin\theta_1\cos\theta_2\\
-		= &\frac{d}{||v||}\cdot\frac{a}{||u||} - \frac{b}{||u||}\cdot\frac{c}{||v||}\\
-		= &\dfrac{1}{||u||\cdot ||v||}(ad - bc).
-	\end{align*}
-	Ở đây $||u||$ và $||v||$ lần lượt là độ dài của các vector tương ứng.
-	\vskip 0.1cm
-	Ta đã biết diện tích của một hình bình hành bằng với tích của độ dài hai cạnh nhân với $\sin$ của góc giữa chúng. Để phục vụ các tính toán tiếp theo, ta sẽ dùng khái niệm diện tích có dấu:
-	\begin{align*}
-		||u||||v||\sin\theta = ad - bc.
-	\end{align*}
-	Diện tích này sẽ dương nếu chiều quay từ u đến v là ngược chiều kim đồng hồ và âm nếu chiều quay ngược lại.
-	\begin{figure}[H]
-		\vspace*{-5pt}
-		\centering
-		\captionsetup{labelformat= empty, justification=centering}
-		\includegraphics[width= 1\linewidth]{11}
-		\caption{\small\textit{\color{toanhocdoisong}Hình $7$. Góc giữa mỗi vector với trục $x$ và góc giữa hai vector.}}
-		\vspace*{-10pt}
-	\end{figure}
-	Do diện tích tam giác bằng một nửa diện tích hình bình hành có chung hai cạnh, diện tích có dấu của tam giác tạo bởi hai vector $u$ và $v$ là:
-	\begin{align*}
-		\dfrac{1}{2}(ad-bc).
-	\end{align*}
-	Trong trường hợp tam giác tạo bởi hai vector $(x_1,y_1)$ và $(x_2,y_2)$, ta có diện tích tam giác (có dấu) tính theo công thức:
-	\begin{align*}
-		\dfrac{1}{2}(x_1y_2 - x_2y_1).
-	\end{align*}
-	Diện tích này dương khi chiều quay từ vector $(x_1,y_1)$ đến $(x_2,y_2)$ là ngược chiều kim đồng hồ và âm trong trường hợp ngược lại.
-	\vskip 0.1cm
-	Từ công thức này, ta hãy mở rộng cho trường hợp một đa giác lồi có chứa gốc tọa độ ở miền trong của nó. Giả sử tọa độ các đỉnh của đa giác là $A_1(x_1,y_1),A_2 (x_2,y_2),\ldots,A_n(x_n,y_n)$ theo thứ tự ngược chiều kim đồng hồ.
-	\vskip 0.1cm
-	Khi đó diện tích có dấu của đa giác sẽ bằng tổng diện tích có dấu của các tam giác:
-	\begin{align*}
-		&\dfrac{1}{2}(x_1y_2 - x_2y_1 + x_2y_3 - x_3y_2 + \cdots \\
-		&+ x_{n-1}y_n - x_ny_{n-1} + x_ny_1 - x_1y_n).
-	\end{align*}
-	và sẽ nhận giá trị dương.
-	\begin{figure}[H]
-		\vspace*{-5pt}
-		\centering
-		\captionsetup{labelformat= empty, justification=centering}
-		\includegraphics[width= 1\linewidth]{12}
-		\caption{\small\textit{\color{toanhocdoisong}Hình $8$. Trường hợp đa giác lồi có gốc tọa độ ở miền trong đa giác.}}
-		\vspace*{-10pt}
-	\end{figure}
-	Tất nhiên không phải đa giác nào cũng chứa gốc tọa độ ở miền trong của nó. Với trường hợp này, ta hãy để ý rằng với $u=(a,b),v=(c,d)$ thì $ad-bc$ cũng chính là thành phần theo trục $z$ của tích có hướng $u\cdot v$. Giả sử $O$ không còn là gốc tọa độ mà chỉ là một điểm bất kỳ ở miền trong tam giác, các vector từ $O$ đến các đỉnh đa giác lần lượt là $v_1,v_2,\ldots,v_n$ còn vector từ gốc tọa độ đến $O$ là $w$.
-	\vskip 0.1cm
-	Ta có:
-	\begin{align*}
-		&(v_1+w) \times (v_2+w)+(v_2+w) \times (v_3+w)\\
-		&+ \cdots +(v_n+w) \times (v_1+w)\\
-		&(v_1 \times v_2+v_2 \times v_3+\cdots+v_{n-1} \times v_n + v_n \times v_1 )\\
-		&+(v_1+v_2+\cdots+v_{n-1}+v_n) \times w \\
-		&+ w \times (v_1+v_2+\cdots +v_{n-1}+v_n)\\
-		&(v_1 \times v_2+v_2 \times v_3+\cdots + v_{n-1} \times v_n + v_n \times v_1)
-	\end{align*}
-	Ở đây ta đã sử dụng tính chất $a \times b=-b \times a$ để triệt tiêu các thành phần có tích vô hướng liên quan đến $w$.
-	\vskip 0.1cm
-	Biểu thức trên cũng chỉ ra rằng dù gốc tọa độ không nằm trong đa giác thì công thức dây giày vẫn cho cho ta diện tích của đa giác.
-	\begin{figure}[H]
-		\vspace*{-5pt}
-		\centering
-		\captionsetup{labelformat= empty, justification=centering}
-		\includegraphics[width= 1\linewidth]{13}
-		\caption{\small\textit{\color{toanhocdoisong}Hình $9$. Một ví dụ tính diện tích sử dụng công thức dây giày.}}
-		\vspace*{-10pt}
-	\end{figure}
-	Ví dụ với đa giác có tọa độ các đỉnh như trong Hình $9$, sau khi thay số vào công thức, ta được giá trị diện tích là $14$ (nếu các đỉnh được liệt kê theo thứ tự ngược chiều kim đồng hồ).
-	\vskip 0.1cm
-	Trong trường hợp đa giác là không lồi, công thức dây giày vẫn đúng. Các tam giác có thứ tự liệt kê các đỉnh cùng chiều kim đồng hồ sẽ có diện tích âm. Các phần âm dương sẽ bù trừ cho nhau và công thức dây giày vẫn cho ta diện tích của đa giác.
-	\begin{figure}[H]
-		\vspace*{-5pt}
-		\centering
-		\captionsetup{labelformat= empty, justification=centering}
-		\includegraphics[width= 1\linewidth]{13}
-		\includegraphics[width= 1\linewidth]{14}
-		\caption{\small\textit{\color{toanhocdoisong}Hình $10$. Minh họa công thức dây giày cho trường hợp đa giác không lồi.}}
-		\vspace*{-10pt}
-	\end{figure}
-	Do đặc điểm bù trừ này mà công thức dây giày cũng vẫn đúng cho trường hợp đa giác có các cạnh cắt nhau như trong Hình $11$.
-	\begin{figure}[H]
-		\vspace*{-5pt}
-		\centering
-		\captionsetup{labelformat= empty, justification=centering}
-		\includegraphics[width= 1\linewidth]{15}
-		\caption{\small\textit{\color{toanhocdoisong}Hình $11$. Công thức dây giày vẫn đúng trong trường hợp đa giác có các cạnh cắt nhau.}}
-		\vspace*{-10pt}
-	\end{figure}
-	Ta cũng có thể tiến hành chứng minh công thức dây giày theo một cách tiếp cận khác. Xét hai đỉnh $(x_i,y_i)$ và $(x_(i+1),y_(i+1))$ của một đa giác có các đỉnh nằm hoàn toàn phía trên trục $x$. Đây là hai đỉnh liền nhau. Biểu thức  $\dfrac{1}{2}(x_{i+1}-x_i)(y_i+y_{i+1})$ chính là một diện tích có dấu của hình thang bao gồm cạnh nối hai đỉnh này, hai đoạn vuông góc hạ từ các đỉnh xuống trục $x$, và hình chiếu của cạnh này trên trục $x$ (Hình $12$). Ngược lại với chứng minh trên, diện tích này sẽ dương khi chiều từ $(x_i,y_i)$ sang $(x_{i+1},y_{i+1})$ là cùng chiều kim đồng hồ (hướng từ trái sang phải trên cạnh của đa giác) và âm trong trường hợp ngược lại. Tất nhiên nó sẽ bằng $0$ khi cạnh đa giác vuông góc với trục $x$.
-	\begin{figure}[H]
-		\vspace*{-5pt}
-		\centering
-		\captionsetup{labelformat= empty, justification=centering}
-		\includegraphics[width= 1\linewidth]{15}
-		\caption{\small\textit{\color{toanhocdoisong}Hình $12$. Chứng minh công thức dây giày dựa vào diện tích hình thang.}}
-		\vspace*{-10pt}
-	\end{figure}
-	Khi tiến hành cộng tổng diện tích tất cả các hình thang được sinh ra theo cách này và rút gọn lại biểu thức, ta cũng sẽ thu được công thức tính diện tích theo tọa độ. Thật vậy:
-	\begin{align*}
-		&\frac{1}{2}\sum\limits_{i = 1}^n \left( {{x_{i + 1}} - {x_i}} \right)\left( {{y_{i + 1}} + {y_i}} \right) \\
-		= &\frac{1}{2}\sum\limits_{i = 1}^n \left( {{x_{i + i}}{y_{i + 1}} + {x_{i + 1}}{y_i} - {x_i}{y_{i + 1}} + {x_i}{y_i}} \right) \\
-		= &\frac{1}{2}\left( {\sum\limits_{i = 1}^n {{x_{i + i}}{y_i} - } \sum\limits_{i = 1}^n {{x_i}{y_{i + 1}}} } \right) .
-	\end{align*}
-	Chú ý rằng công thức này ngược dấu so với công thức dây giày ban đầu do các đỉnh được liệt kê theo chiều kim đồng hồ thay vì ngược chiều kim đồng hồ.
-	\vskip 0.1cm
-	Trong trường hợp đa giác không hoàn toàn nằm phía trên trục $x$, ta cần chứng minh rằng công thức này cho giá trị không đổi khi dịch gốc tọa độ dọc theo trục thẳng đứng. Giả sử tất cả các tọa độ trên trục y của mỗi điểm đều được cộng thêm một lượng là $C$. Khi đó:
-	\begin{align*}
-		&\frac{1}{2}\sum\limits_{i = 1}^n \left( {{x_{i + 1}} - {x_i}} \right)\left( {{y_{i + 1}} + {y_i} + 2C} \right) \\
-		= &\frac{1}{2}\sum\limits_{i = 1}^n \left( {{x_{i + 1}} - {x_i}} \right)\left( {{y_{i + 1}} + {y_i}} \right) + 2C\left( {{x_{i + 1}} - {x_i}} \right) \\
-		= &\frac{1}{2} \sum\limits_{i = 1}^n \left( {{x_{i + 1}} - {x_i}} \right)\left( {{y_{i + 1}} + {y_i}} \right) + C \cdot \sum\limits_{i = 1}^n {\left( {{x_{i + 1}} - {x_i}} \right)}  \\
-	= &\frac{1}{2}\sum\limits_{i = 1}^n {\left( {{x_{i + 1}} - {x_i}} \right)\left( {{y_{i + 1}} + {y_i}} \right)} 
-	\end{align*}
-	Số hạng chứa $C$ bằng $0$ do $x_{n+1}$ cũng chính là $x_1$ (các cạnh đa giác tạo thành một đường gấp khúc khép kín). Phương pháp chứng minh sử dụng hình thang này cũng đúng cho trường hợp đa giác không lồi (Hình $13$).
-	\begin{figure}[H]
-		\vspace*{-10pt}
-		\centering
-		\captionsetup{labelformat= empty, justification=centering}
-		\includegraphics[width= 0.9\linewidth]{16}
-		\caption{\small\textit{\color{toanhocdoisong}Hình $13$. Các hình thang trong trường hợp đa giác không lồi.}}
-		\vspace*{-10pt}
-	\end{figure}
-	Một ứng dụng đáng chú ý của công thức dây giày là nó cho ta định lý Pythagoras một cách trực tiếp. 
-	\begin{figure}[H]
-		\vspace*{-5pt}
-		\centering
-		\captionsetup{labelformat= empty, justification=centering}
-		\includegraphics[width= 0.9\linewidth]{17}
-		\caption{\small\textit{\color{toanhocdoisong}Hình $14$. Sử dụng công thức dây giày để chứng minh định lý Pythagoras.}}
-		\vspace*{-10pt}
-	\end{figure}
-	Xét tam giác vuông $OAB$ với tọa độ các đỉnh $O(0,0)$, $A(a,0)$, $B(0,b)$. Có thể dễ dàng chứng minh bằng hình học rằng các đỉnh của hình vuông $ABCD$ trong hình có tọa độ là $C(b,a+b)$ và $D(a+b,a)$.
-	\vskip 0.1cm
-	Diện tích hình vuông $ABCD$ có thể được tính theo công thức dây giày theo thứ tự liệt kê $A, D, C, B$:
-	\begin{align*}
-		&\dfrac{1}{2}\left[a\cdot a - 0 \cdot(a+b) + (a+b)\cdot(a+b) \right.\\
-		&\left.- a\cdot b + b\cdot b - (a+b)\cdot 0 + 0 \cdot 0 - a\cdot b\right]\\
-		=\,\, &a^2 + b^2.
-	\end{align*}
-	Đồng thời diện tích hình vuông này cũng bằng $c^2$ với $c=AB$, và định lý Pythagoras đã được chứng minh.
-	\vskip 0.1cm
-	\textbf{\color{toanhocdoisong}Bài tập}
-	\vskip 0.1cm
-	$\pmb{1.}$ Dùng công thức dây giày, tính diện tích của các đa giác với các đỉnh có tọa độ như sau:
-	\vskip 0.05cm
-	$a)$ $(1,1)$, $(2,4)$, $(0,6)$.
-	\vskip 0.1cm
-	$b)$ $(1,3)$, $(-1,2)$, $(-3, -6)$, $(0,-1)$.
-	\vskip 0.1cm
-	$c)$ $(2,2)$, $(-2,2)$, $(-4, -4)$, $(0,-2)$, $(4,-4)$.
-	\vskip 0.1cm
-	$\pmb{2.}Ư$ Liên hệ giữa định thức và diện tích hình bình hành cũng có thể được chứng minh bằng cách cắt ghép trực quan. Hình bên dưới mô tả cách làm này cho trường hợp $0<b<d$, $0<c<a$. Bạn đọc hãy liệt kê các trường hợp còn lại và tiến hành chứng minh dùng cắt ghép cho các trường hợp này.
-	\begin{figure}[H]
-		\vspace*{-5pt}
-		\centering
-		\captionsetup{labelformat= empty, justification=centering}
-		\includegraphics[width= 0.8\linewidth]{18}
-		\vspace*{-10pt}
-	\end{figure}
-	$\pmb{3.}$ \textbf{\color{toanhocdoisong}Diện tích của miền bao bởi đường cong kín}
-	\vskip 0.1cm
-	Sau khi đã giải quyết bài toán tính diện tích của một đa giác, ta hãy giải quyết bài toán tính diện tích của miền được bao bởi một đường cong kín. Trước hết, ta hãy bàn về cách mô tả một đường cong kín như thế nào. Do đường cong kín chắc chắn không thể mô tả bằng một hàm số dạng $y=f(x)$ (vì trong trường hợp này ứng với một giá trị của $x$ có thể có nhiều hơn một giá trị của $y$) nên ta cần một cách khác để mô tả đường cong.
-	\vskip 0.1cm
-	Nhiều đường cong quen thuộc có thể được mô tả bằng dạng tham số (giống như dạng tham số của đường thẳng trong sách giáo khoa toán). Theo đó, một đường cong có thể được biểu diễn dưới dạng $(x(t),y(t))$ với $t\in [a,b]$ là tham số mô tả đường cong.
-	\vskip 0.1cm
-	Ví dụ, đường tròn bán kính $R$ có tâm ở gốc tọa độ sẽ có dạng tham số $(R\cos t,R\sin t), t\in [0,2\pi]$. Còn đường ellipse có dạng tham số $(a\cos t,b\sin t), t\in [0,2\pi]$ với $a,b$ lần lượt là độ dài các bán trục ngang và đứng.
-	\vskip 0.1cm
-	Xét một đường cong kín $(x(t),y(t))$ với $t \in [a,b]$ và khi $t$ tăng thì vị trí điểm tương ứng với giá trị  này sẽ đi dọc đường cong theo chiều dương (ngược chiều kim đồng hồ). Xét các điểm $t_i$:
-	\begin{align*}
-		a=t_0<t_1<\ldots<t_n=b
-	\end{align*}
-	\begin{figure}[H]
-		\vspace*{-5pt}
-		\centering
-		\captionsetup{labelformat= empty, justification=centering}
-		\includegraphics[width= 1\linewidth]{20}
-		\caption{\small\textit{\color{toanhocdoisong}Hình $15$. Miền bao bởi đường cong kín.}}
-		\vspace*{-10pt}
-	\end{figure}
-	Ứng với mỗi giá trị $t_i$, ta có một điểm $C(t_i)$ tương ứng trên đường cong.
-	\vskip 0.1cm 
-	Diện tích của đa giác tạo bởi các điểm $C(t_i)$ này có thể được tính theo công thức dây giày:
-	\begin{align*}
-		\frac{1}{2}\sum\limits_{i = 1}^n {x\left( {{t_{i - 1}}} \right)}
-	\end{align*}
-		Chú ý rằng khi đường cong kín thì $C(t_0)$ và $C(t_n)$ trùng nhau.
-		\vskip 0.1cm
-		Khi khoảng cách giữa các giá trị $t_i$ tiến tới $0$, ta có thể viết tổng này dưới dạng tích phân:
-		\begin{align*}
-			\frac{1}{2}\int_a^b {\left[ {x(t)y'(t) - y(t)x'(t)} \right]dt.}
-		\end{align*}
-		Những bạn đọc đã học qua giải tích vector sẽ biết đây là một công thức được suy ra từ định lý Green cho tích phân đường. Mặt khác, công thức dây giày cũng có thể được chứng minh bằng cách áp dụng công thức trên cho trường hợp đường cong kín là đường gấp khúc.
-		\vskip 0.1cm
-		Ví dụ, với trường hợp đường ellipse, ta có thể tính diện tích của miền bao bởi nó như sau:
-		\begin{align*}
-			A =& \frac{1}{2}\int_0^{2\pi } \left[ (a\cos t)(b\cos t) \right.\\
-				&\left.- (b\sin t)( - a\sin t) \right]dt \\
-				= &\frac{1}{2}ab\int_0^{2\pi } dt = \pi ab 
-		\end{align*}
-		\textbf{\color{toanhocdoisong}Bài tập}
-		\vskip 0.1cm
-		Sử dụng công thức tích phân trên để tính diện tích bao bởi các đường cong kín sau:
-		$a)$ $(\sin2t,\sin t)$, $0\le t \le \pi$.
-		\begin{figure}[H]
-			\vspace*{-5pt}
-			\centering
-			\captionsetup{labelformat= empty, justification=centering}
-			\includegraphics[width= 0.7\linewidth]{21}
-			\vspace*{-10pt}
-		\end{figure}
-		$b)$ $(5\cos t-\cos5t,5\sin t- \sin5t),0 \le t \le 2\pi$.
-		\begin{figure}[H]
-			\vspace*{-5pt}
-			\centering
-			\captionsetup{labelformat= empty, justification=centering}
-			\includegraphics[width= 0.7\linewidth]{22}
-			\vspace*{-10pt}
-		\end{figure}
-		$c)$ $(\cos^3 t,\sin^3t), 0\le t \le 2\pi$.
-		\begin{figure}[H]
-			\vspace*{-5pt}
-			\centering
-			\captionsetup{labelformat= empty, justification=centering}
-			\includegraphics[width= 0.7\linewidth]{23}
-			\vspace*{-10pt}
-		\end{figure}
-		$\pmb{4.}$ \textbf{\color{toanhocdoisong}Lời kết}
-		\vskip 0.1cm
-		Bài toán tích diện tích đa giác cũng như diện tích miền bao bởi đường cong kín là một đề tài tương đối thú vị khi giảng dạy về ứng dụng toán học cho học sinh phổ thông. Nó cũng có thể được kết hợp với hoạt động tiến hành đo đạc trắc địa thực tế trong các tiết học tích hợp hoặc cho học sinh tự thực hành ở nhà. Đồng thời, nội dung này cũng giúp học sinh làm quen với một số kiến thức sẽ được học ở môn giải tích bậc đại học.
-		\vskip 0.1cm
-		\textbf{\color{toanhocdoisong}Tài liệu tham khảo}
-		\vskip 0.1cm
-		[$1$] Braden, B. ($1986$). The Surveyor's Area Formula. \textit{College Mathematics Journal}, $17(4)$, $326–337$. \url{https://doi.org/10.1080/07468342.1986.11972974}
-		\vskip 0.1cm
-		[$2$] Lee, Y., \& Lim, W. ($2017$). Shoelace Formula: Connecting the Area of a Polygon and the Vector Cross Product. \textit{The Mathematics Teacher}, $110(8), 631-636$. \url{https://doi.org/10.5951/mathteacher.110.8.0631}
-		\vskip 0.1cm
-		[$3$] Leise, T. $(2007)$. As the Planimeter's Wheel Turns: Planimeter Proofs for Calculus Class. \textit{The College Mathematics Journal}, $38(1)$, $24-31$. \url{https://doi.org/10.1080/07468342.2007.11922214}
-		\vskip 0.1cm
-		[$4$] Stewart, J. ($2019$). \textit{Calculus : concepts and contexts}. Boston, Ma, Usa: Cengage.
+	[$5$] Glen Van Brummelen. ``Decimal Fractional Numeration and the Decimal Point in $15$th--Century Italy." \textit{Historia Mathematica}, $1$ Feb. $2024$, \url{https://doi.org/10.1016/j.hm.2024.01.001.}
 \end{multicols}

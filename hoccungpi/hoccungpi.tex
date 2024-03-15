@@ -2,544 +2,225 @@
 \pagestyle{hoccungpi}
 \everymath{\color{hoccungpi}}
 \graphicspath{{../hoccungpi/pic/}}
-\blfootnote{\color{hoccungpi}\color{hoccungpi}$^1$Sinh viên Trường ĐH Sư phạm TP.HCM.}
+\blfootnote{\color{hoccungpi}\color{hoccungpi}$^1$...}
 \begingroup
 \AddToShipoutPicture*{\put(0,616){\includegraphics[width=19.3cm]{../bannerhoccungpi}}}
-\AddToShipoutPicture*{\put(56,522){\includegraphics[scale=1]{../tieude.pdf}}}
+\AddToShipoutPicture*{\put(90,525){\includegraphics[scale=1]{../tieude1.pdf}}}
 \centering
 \endgroup
-\vspace*{190pt}
+\vspace*{185pt}
 
 \begin{multicols}{2}
-	$\pmb{1.}$	\textbf{\color{hoccungpi}Giới thiệu}
+	Trong hành trình tìm kiếm cách làm cho môn Toán trở nên hấp dẫn hơn và gần gũi hơn đối với học sinh, việc kết hợp giữa kiến thức lý thuyết và ứng dụng là vô cùng quan trọng. Một trong những cách hiệu quả để kích thích sự quan tâm và hiểu biết của học sinh là khám phá Toán học thông qua các trò chơi. Trong bài viết này, bạn đọc sẽ được khám phá một trong những ứng dụng logic và khá thú vị của hệ nhị phân trong trò chơi đoán suy nghĩ. 
 	\vskip 0.1cm
-	Những bài toán phương trình hàm trên tập hợp số thực dương đã không còn quá xa lạ đối với các bạn học sinh chuyên Toán và ngày càng xuất hiện nhiều hơn trong các đề thi Olympic dạo gần đây. Trong số đó, có thể kể đến bài toán nằm trong đề thi chọn đội tuyển Quảng Ninh tham dự kỳ thi học sinh giỏi cấp quốc gia môn Toán (VMO) năm học $2022-2023$ dưới đây: 
+	\textbf{\color{hoccungpi}Trò chơi đoán suy nghĩ -- mục đích và các bước tiến hành}
 	\vskip 0.1cm
-	\textbf{\color{hoccungpi}Bài toán:} [Quảng Ninh $2022 - 2023$]
+	Trò chơi được bắt đầu bằng việc Ảo thuật gia yêu cầu Người chơi chọn một trong số $32$ lá cờ của các nước đã chuẩn bị như hình dưới đây.  Người chơi sẽ không nói cho Ảo thuật gia biết lá cờ được chọn. Nhiệm vụ của Ảo thuật gia là đoán đúng lá cờ mà Người chơi đã chọn. 
+	\begin{figure}[H]
+		\vspace*{-5pt}
+		\centering
+		\captionsetup{labelformat= empty, justification=centering}
+		\includegraphics[width= 1\linewidth]{1}
+%		\caption{\small\textit{\color{}}}
+		\vspace*{-15pt}
+	\end{figure}
+	Để đoán đúng là cờ đã được chọn, bước tiếp theo Ảo thuật gia sẽ yêu cầu Người chơi trả lời ``Có" hoặc ``Không" cho $5$ câu hỏi dưới đây. 
 	\vskip 0.1cm
-	Tìm tất cả hàm số $f: \mathbb{R^+} \to \mathbb{R^+}$ thỏa mãn: 
+	\textit{Câu hỏi $1$: Lá cờ mà bạn chọn có nằm trong dãy những lá cờ sau không?}
+	\begin{figure}[H]
+		\vspace*{-5pt}
+		\centering
+		\captionsetup{labelformat= empty, justification=centering}
+		\includegraphics[width= 1\linewidth]{2}
+%		\caption{\small\textit{\color{}}}
+		\vspace*{-15pt}
+	\end{figure}
+	\textit{Câu hỏi $2$: Lá cờ mà bạn chọn có nằm trong dãy những lá cờ sau không?}
+	\begin{figure}[H]
+		\vspace*{-5pt}
+		\centering
+		\captionsetup{labelformat= empty, justification=centering}
+		\includegraphics[width= 1\linewidth]{3}
+		%		\caption{\small\textit{\color{}}}
+		\vspace*{-15pt}
+	\end{figure}
+	\textit{Câu hỏi $3$: Lá cờ mà bạn chọn có nằm trong dãy những lá cờ sau không?}
+	\begin{figure}[H]
+		\vspace*{-5pt}
+		\centering
+		\captionsetup{labelformat= empty, justification=centering}
+		\includegraphics[width= 1\linewidth]{4}
+		%		\caption{\small\textit{\color{}}}
+		\vspace*{-15pt}
+	\end{figure}
+	\textit{Câu hỏi $4$: Lá cờ mà bạn chọn có nằm trong dãy những lá cờ sau không?}
+	\begin{figure}[H]
+		\vspace*{-5pt}
+		\centering
+		\captionsetup{labelformat= empty, justification=centering}
+		\includegraphics[width= 1\linewidth]{5}
+		%		\caption{\small\textit{\color{}}}
+		\vspace*{-15pt}
+	\end{figure}
+	\textit{Câu hỏi $s5$: Lá cờ mà bạn chọn có nằm trong dãy những lá cờ sau không?}
+	\begin{figure}[H]
+		\vspace*{5pt}
+		\centering
+		\captionsetup{labelformat= empty, justification=centering}
+		\includegraphics[width= 1\linewidth]{6}
+		%		\caption{\small\textit{\color{}}}
+		\vspace*{-15pt}
+	\end{figure}
+	Dựa vào dãy ``Có", ``Không" mà Người chơi đã đưa ra, Ảo thuật gia có thể biết một cách nhanh chóng và chính xác vị trí là cờ đã được chọn. 
+	\vskip 0.1cm
+	Theo bạn Ảo thuật gia đã làm thế nào? Các lá cờ trong những câu hỏi trên được chọn một cách ngẫu nhiên hay được sắp đặt sẵn? Nếu là sắp đặt sẵn thì cách chọn các lá cờ đó như thế nào? Số lượng lá cờ có ảnh hưởng tới kết quả của trò chơi? Trước khi đi trả lời một cách chi tiết, Bạn đọc hãy dành một chút thời gian suy nghĩ xem Ảo thuật gia đã làm thế nào nhé. 
+	\vskip 0.1cm
+	\textbf{\color{hoccungpi}Hệ nhị phân}
+	\vskip 0.1cm
+	Để trả lời cho những câu hỏi được nêu ra ở phần trước, trong mục này, Bạn đọc sẽ được làm quen với hệ nhị phân, cách chuyển từ hệ thập phân sang hệ nhị phân và ngược lại.
+	\vskip 0.1cm
+	Hệ thập phân tức hệ đếm cơ số $10$ là hệ thống số học được sử dụng phổ biến nhất trong các tính toán hàng ngày mà ở đó ta sử dụng $10$ chữ số từ $0$ đến $9$ để biểu diễn mọi số. Ví dụ như số $1234$ được biểu diễn trong hệ thập phân như sau: 
 	\begin{align*}
-		f(3f(x) + 3y) = f(3x + y) + 2y,\tag{$1$}
+		1234&=1\!\times\!1000\!+\!2\!\times\!100\!+\!3\!\times\!10\!+\!4\\
+		&=1\!\times\! 10^3 \!+\! 2\!\times\!10^2 \!+\! 3\!\times\!10^1 \!+\! 4\!\times\!10^0.
 	\end{align*}
-	với mọi $x,y$ thuộc $\mathbb{R^+}$.
+	Tức là chữ số $1$ đại diện cho $1000$, chữ số $2$ đại diện cho $200$, chữ số $3$ đại diện cho $30$ và chữ số $4$ đại diện cho $4$ đơn vị. 
 	\vskip 0.1cm
-	Bài viết này bàn về bảy lời giải cho bài toán trên qua đó giới thiệu cho bạn đọc những kỹ năng, kỹ thuật cơ bản để giải quyết những bài toán phương trình hàm trên tập hợp số thực dương nói riêng và những bài toán phương trình hàm nói chung.
-	\vskip 0.1cm
-	$\pmb{2.}$	\textbf{\color{hoccungpi}Lời giải bài toán}
-	\vskip 0.1cm
-	Giả sử rằng tồn tại hàm $f$ thỏa mãn các yêu cầu bài toán. Trước hết ta có các nhận xét sau:
-	\vskip 0.1cm
-	\textbf{\color{hoccungpi}Nhận xét $\pmb1$.} $f(x) \ge x, \forall x > 0$.
-	\vskip 0.1cm   
-	\textit{Chứng minh.}  Giả sử tồn tại $x_0 > 0$  sao cho $f(x_0) < x_0$. Trong ($1$) cho $x = x_0$  và  $y = \dfrac{3\left(x_0 -f(x_0)\right)}{2}$ ta được: 
-	\begin{align*}
-		3({x_0} - f({x_0})) = 0 \Rightarrow f({x_0}) = {x_0}, \text{ vô lý!}
-	\end{align*}
-	Do đó $f(x) \ge x, \forall x > 0$.
-	\vskip 0.1cm  
-	\textbf{\color{hoccungpi}Bình luận.}  Lý do nào khiến ta nghĩ ra được đánh giá trên? Quan sát phương trình ($1$), ta mong muốn triệt tiêu $f$  ở cả hai vế bằng cách lựa chọn $x, y > 0$  sao cho: 
-	\begin{align*}
-		3f(x) + 3y = 3x + y.
-	\end{align*}
-	Chuyển vế, thu được $y = \dfrac{3\left(x - f(x)\right)}{2}$.  Ý đồ của ta sẽ thành công nếu ta tìm được $x > 0$  sao cho  $f(x) < x$. Tuy nhiên với $x,y$  như vậy thì ($1$) trở thành: $2y = 0$, vô lý! Do đó phép chọn này không thể thực hiện được, và vì thế điều ngược lại là $f(x) \ge x , \forall x > 0$  ắt phải đúng!
-	\vskip 0.1cm
-	\textbf{\color{hoccungpi}Nhận xét $\pmb2$.} $f$ là đơn ánh.
-	\vskip 0.1cm
-	\textit{Chứng minh.}  Giả sử tồn tại $a > b > 0$  sao cho $f(a) = f(b) = c$.  Trong ($1$) lần lượt cho $x = a $ và $x = b$  thì được: 
-	\begin{align*}
-		f(y + 3a) + 2y &= f(3y + 3c) \\
-		&= f(y + 3b) + 2y,\forall y > 0.
-	\end{align*}
-	Suy ra: 
-	\begin{align*}
-		f(y + 3a) = f(y + 3b),\forall y > 0.
-	\end{align*}
-	Từ đây thay $y$  bởi $y - 3b$  và đặt $T = 3a - 3b > 0$  thì được:
-	\begin{align*}
-		f(y) = f(y + T),\forall y > 3b.
-	\end{align*}
-	Bằng quy nạp ta chứng minh được: 
-	\begin{align*}
-		f(y) = f(y + nT),\forall y > 3b,n \in \mathbb{N^*}.
-	\end{align*}
-	Trong đẳng thức trên chọn $y = 3b + 1$  và sử dụng \textbf{\color{hoccungpi}Nhận xét $\pmb1$} ta được: 
-	\begin{align*}
-		f(3b + 1) &= f(3b + 1 + nT) \\
-		&\ge 3b + 1 + nT,\forall n \in \mathbb{N^*}
-	\end{align*}
-	Đến đây cho  $n \to +\infty$ ta thu được điều vô lý. Do vậy $f$  là đơn ánh.
-	\vskip 0.1cm
-	\textbf{\color{hoccungpi}Bình luận.} Đối với những bài toán tìm hàm  $f: \mathbb{R^+} \to \mathbb{R^+}$, ta thường chú ý đến tính đơn điệu, đơn ánh, tuần hoàn, bị chặn, cộng tính, \ldots\, của hàm  $f$. Đặc biệt, kỹ thuật phản chứng, xây dựng hàm tuần hoàn nhằm chứng minh $f$  đơn ánh đã trở thành ý tưởng quen thuộc khi giải quyết những bài toán dạng này.
+	Khác với hệ thập phân, hệ nhị phân tức hệ đếm cơ số $2$ là hệ thống số học chỉ sử dụng hai ký tự số là $0$ và $1$ để biểu diễn mọi số và mọi dữ liệu. Trong hệ nhị phân, mỗi chữ số được gọi là một ``bit", mỗi bit có thể có giá trị $0$ hoặc $1$, tương ứng với trạng thái ``tắt" và ``bật" của công tắc điện. Hệ nhị phân chính là cơ sở của hầu hết các hệ thống tính toán điện tử hiện đại do có ưu điểm tính toán đơn giản, dễ dàng thực hiện về mặt vật lý chẳng hạn như trên các mạch điện tử. Điều này khiến nó trở thành ngôn ngữ giao tiếp cơ bản giữa các thành phần của máy tính và các thiết bị điện tử khác.
 	\vskip 0.1cm 
-	Sau khi thu được hai nhận xét trên, tôi xin trình bày bảy lời giải cho bài toán gốc như sau:
+	Trong hệ nhị phân, mọi số đều biểu diễn được bằng một dãy đơn vị ``bit". Mỗi chữ số (bit) đại diện cho các bậc giá trị khác nhau, và giá trị của mỗi bit được tính dựa trên các lũy thừa của $2$. Ví dụ như số nhị phân $10101$ được biểu diễn dưới dạng tổng của các lũy thừa của $2$ như sau:
+	\begin{align*}
+		10101\!=\!1\!\times\!\!2^4\!+\!0\!\times\!\!2^3\!+\!1\!\times\!2^2\!+\!0\!\times\!\!2^1\!+\!1\!\!\times\!\!2^0
+	\end{align*}
+	tương ứng với giá trị $21$ trong hệ thập phân. 
 	\vskip 0.1cm
-	\textbf{\color{hoccungpi}Cách $\pmb{1}$:}
-	\vskip 0.1cm
-	Trong ($1$) thay $x$  bởi $3f(x) + 3z$ thì được: 
-	\begin{align*}
-		&f(3f(3f(x) + 3z) + 3y) \\
-		&=f(9f(x) + 9z + y) + 2y,\forall x,y,z > 0
-	\end{align*}
-	suy ra, theo ($1$)
-	\begin{align*}
-		&f(3f(3x + z) + 6z + 3y) \\
-		=&f(9f(x) + 9z + y) + 2y,\forall x,y,z > 0
-	\end{align*}
-	suy ra, theo ($1$)
-	\begin{align*}
-	&f(3(3x + z) + 2z + y) + 4z + 2y \\
-	= &f(9f(x) + 9z + y) + 2y,\forall x,y,z > 0
-	\end{align*}
-	suy ra
-	\begin{align*}
-		&f(9x + 5z + y) + 4z \\
-		&= f(9f(x) + 9z + y),\forall x,y,z > 0. \tag{$2$}
-	\end{align*}
-	Đến đây thay $y$  và $z$  bởi $\dfrac{z}{2}$  ta được: 
-	\begin{align*}
-		f(9x + 3z) + 2z 
-		= f(9f(x) + 5z),\forall x,z > 0
-	\end{align*}
-	suy ra
-	\begin{align*}
-		f(3(3x + \frac{{2z}}{3}) + z) + 2z =f(9f(x) + 5z),
-	\end{align*}
-	với mọi $x,z > 0$.
-	Suy ra, theo ($1$)
-	\begin{align*}
-		f(3f(3x + \frac{{2z}}{3}) + 3z) = f(9f(x) + 5z),
-	\end{align*}	
-	với mọi $x,z > 0$. Mặt khác $f$  là đơn ánh nên: 
-	\begin{align*}
-		3f(3x + \frac{{2z}}{3}) + 3z = 9f(x) + 5z,\forall x,z > 0.
-	\end{align*}
-	Dẫn đến:
-	\begin{align*}
-		f(3x + \frac{{2z}}{3}) = 3f(x) + \frac{{2z}}{3},\forall x,z > 0.
-	\end{align*}
-	Đến đây thay $z$  bởi $\dfrac{9z}{2}$  thì được:
-	\begin{align*}
-		f(3x + 3z) = 3f(x) + 3z,\forall x,z > 0.
-	\end{align*}
-	Trong đẳng thức trên hoán đổi vị trí của $x$  và $z$ cho nhau ta được: 
-	\begin{align*}
-		&3f(z) + 3x = 3f(x) + 3z,\forall x,z > 0\\
-		\Rightarrow &f(x) - x = f(z) - z,\forall x,z > 0.
-	\end{align*}
-	Suy ra: 
-	\begin{align*}
-		f(x) = x + C,\forall x > 0 \text{ ($C$ là hằng số).}
-	\end{align*}
-	Thay công thức trên vào ($1$) ta được: 
-	\begin{align*}
-		&3x + 3y + 4C = 3x + 3y + C,\forall x,y > 0.
-	\end{align*}
-	Vậy $C = 0$. Vậy bài toán đã cho có duy nhất một nghiệm hàm là $f(x) = x, \forall x >0$.
-	\vskip 0.1cm
-	\textbf{\color{hoccungpi}Cách $\pmb2$:} (tiếp nối từ ($2$))
+	Để chuyển một số từ hệ thập phân sang hệ nhị phân, ta lấy số cần đổi chia với $2$ sau đó lấy kết quả chia tiếp tục với $2$, và lặp lại phép chia này cho đến khi kết quả bằng $0$. Số nhị phân thu được chính là tập hợp các số dư của các phép chia được viết theo thứ tự từ dưới lên trên. Ví dụ, để chuyển số thập phân $30$ sang hệ nhị phân ta làm như sau:
 	\vskip 0.1cm 
-	Trong ($2$) cho $z = x$ thì được: 
-	\begin{align*}
-	f(14x + y) + 4x = f(9f(x) + 9x + y),
-	\end{align*}
-	với mọi $x,y > 0$. Đến đây thay $y$  bởi $y - 14x$  thì được: 
-	\begin{align*}
-		f(y) + 4x = f(y + 9f(x) - 5x), 
-	\end{align*}
-	với mọi $x > 0,y > 14x$.
+	$\bullet$ Chia $30$ cho $2$ ta được kết quả là $15$ và số dư là $0$.
 	\vskip 0.1cm
-	Với mọi  $x > 0$, đặt  $g(x) = 9f(x) - 5x \ge 4x > 0.$ Lúc này đẳng thức trên trở thành: 
-	\begin{align*}
-		&f(y) + 4x \\
-		= &f(y + g(x)),\forall x > 0,y > 14x. \tag{$3$}
-	\end{align*}
-	Đến đây thay $x$  bởi $x + z$  thì được: 
-	\begin{align*}
-		f(y + g(x + z))
-		= &f(y) + 4x + 4z\\
-		\mathop  = \limits^{(3)} &f(y + g(x)) + 4z\\
-		\mathop  = \limits^{(3)} &f(y \!+\! g(x) \!+\! g(z)),
-	\end{align*}
-	với mọi $ x,z > 0,y > 14(x + z)$.
-	Lại có $f$ là đơn ánh nên: 
-	\begin{align*}
-		y + g(x + z) = y + g(x) + g(z),
-	\end{align*}
-	với mọi $x,z > 0,y > 14(x + z).$ Dẫn đến: 
-	\begin{align*}
-		g(x) + g(z) = g(x + z),\forall x,z > 0.
-	\end{align*}
-	Như vậy $g: \mathbb{R^+} \to \mathbb{R^+}$  và $g$ cộng tính trên $\mathbb{R^+}$  nên $g(x) = xg(1),\forall x > 0.$  Nói cách khác, 
-	\begin{align*}
-		9f(x) - 5x = xg(1),\forall x > 0,
-	\end{align*}
-	suy ra
-	\begin{align*}
-		f(x) = \alpha x,\forall x > 0. \text{ ($\alpha$ là hằng số)}
-	\end{align*}
-	Thay công thức trên vào ($1$) ta được: 
-	\begin{align*}
-		\alpha (3\alpha x + 3y) = \alpha (3x + y) + 2y,\forall x,y > 0,
-	\end{align*}
-	suy ra $\alpha = 1.$
-	Vậy bài toán đã cho có duy nhất nghiệm hàm  $f(x)= x, \forall x > 0$.
+	$\bullet$ Kế tiếp, chia $15$ cho $2$ ta được kết quả là $7$ và số dư là $1$.
 	\vskip 0.1cm
-	\textbf{\color{hoccungpi}Cách $\pmb3$:} (tiếp nối từ ($3$))
+	$\bullet$ Ta tiếp tục chia $7$ cho $2$ thu được kết quả $3$ và số dư là $1$.
+	\vskip 0.1cm
+	$\bullet$ Chia $3$ cho $2$ ta được kết quả là $1$ số dư là $1$.
+	\vskip 0.1cm
+	$\bullet$ Chia $1$ cho $2$ ta được kết quả là $0$ và số dư là $1$. 
+	\vskip 0.1cm
+	Từ đó ta được biểu diễn trong hệ nhị phân của số $30$ là $11110$.
 	\vskip 0.1cm 
-	Trong ($1$) thay $y$ bởi $2y$ thì được: 
-	\begin{align*}
-		f(3f(x) \!+\! 6y) \!=\! f(3x \!+\! 2y) \!+\! 4y,\forall x,y > 0
-	\end{align*}
-	suy ra, theo ($3$)
-	\begin{align*}
-		f(3f(x) + 6y) = f(3x + 2y + g(y)),
-	\end{align*}
-	với mọi $y > 0,3x + 2y > 14y.$ 
-	\vskip 0.1cm
-	Lại có  $f$ là đơn ánh nên: 
-	\begin{align*}
-		3f(x) + 6y = 3x + 2y + g(y),
-	\end{align*}
-	với mọi $y > 0,x > 4y.$
-	Nói cách khác, 
-	\begin{align*}
-		f(x) - x = 3(f(y) - y),
-	\end{align*}
-	với mọi $y > 0,x > 4y.$
-	\vskip 0.1cm
-	Với mọi $x > 0$, đặt $h(x) = f(x) - x$. Từ đẳng thức trên ta có ngay: 
-	\begin{align*}
-		h(x) = 3h(y),
-	\end{align*}
-	với mọi $y > 0,x > 4y.$
-	\vskip 0.1cm
-	Giả sử ta cố định $y > 0$  thì lập tức $h$ là hàm hằng trên khoảng $(4y, + \infty)$. Bằng cách cho $y \to 0^+$  ta sẽ thu được $h$ là hàm hằng trên toàn bộ khoảng $(0 , + \infty)$. Dựa trên phân tích này, ta có thể giải tiếp bài toán như sau:
-	\vskip 0.1cm
-	Lấy $x > z > 0$  tùy ý. Ta sẽ chứng minh $h(x) = h(z)$.
+	Ngược lại, để chuyển một số từ hệ nhị phân sang hệ thập phân ta có thể thực hiện các bước sau:
 	\vskip 0.1cm 
-	Thật vậy, chọn $y = \dfrac{z}{5}$  thì $x > 4y$  và  $z > 4y$. Khi đó $h(x) = 3h(y) = h(z)$.  Do đó  $h$ là hàm hằng trên $\mathbb{R^+}$. Nói cách khác, 
-	\begin{align*}
-		f(x) - x = C,
-	\end{align*}
-	với mọi $x > 0$. $C$ là hằng số.
+	\textit{Bước $1$:} Viết số nhị phân thành một dãy các ký tự $0$ và $1$.
 	\vskip 0.1cm
-	Thay công thức trên vào ($1$) ta tìm được: $C = 0.$
+	\textit{Bước $2$:} Theo thứ tự từ trái qua phải, viết các lũy thừa của $2$ tương ứng với các chữ số, bắt đầu từ $2^0$ rồi tới $2^1\ldots$ cho đến hết.
 	\vskip 0.1cm
-	\textbf{\color{hoccungpi}Cách $\pmb4$:} (tiếp nối từ ($3$))
-	\vskip 0.1cm     
-	Điểm mấu chốt của \textbf{\color{hoccungpi}Cách $\pmb2$} và \textbf{\color{hoccungpi}Cách $\pmb3$} là dựa vào phương trình ($3$) và tìm cách vận dụng tính đơn ánh của hàm $f$. Tuy nhiên trong một số trường hợp, nếu ta không chỉ ra được hàm $f$  đơn ánh thì liệu có cách nào giải quyết được phương trình ($3$) hay không? Bổ đề sau đây sẽ giúp chúng ta trả lời câu hỏi đó.  
+	\textit{Bước $3$:} Tính các giá trị lũy thừa của $2$ vừa lập ra. 
 	\vskip 0.1cm
-	\textbf{\color{hoccungpi}Bổ đề.}  Cho các hàm  $f,g,h,q: \mathbb{R^+} \to \mathbb{R^+}$ thỏa mãn: 
-	\begin{align*}
-		f(y + g(x)) = f(y) + h(x), \tag{$4$}
-	\end{align*}
-	với mọi $x > 0,y > q(x)$.
-	Khi đó $\dfrac{g(x)}{h(x)}$  là hàm hằng.
+	\textit{Bước $4$:}  Bỏ đi các giá trị tương ứng với vị trí số $0$, giữ lại các giá trị tương ứng với vị trí số $1$. Cộng các giá trị đó lại với nhau ta được kết quả chính là giá trị thập phân tương ứng của số nhị phân.
 	\vskip 0.1cm
-	\textit{Chứng minh.}  Trong ($4$) thay $y$ bởi $y - g(x)$  thì được: 
-	\begin{align*}
-		f(y - g(x)) = f(y) - h(x),
-	\end{align*}
-	với mọi $x > 0,y > q(x) + g(x).$
-	\vskip 0.1cm
-	Bằng quy nạp ta thu được: 
-	\begin{align*}
-		f(y - ng(x)) = f(y) - nh(x), \tag{$5$}
-	\end{align*}
-	với mọi $n \in \mathbb{N^*},x > 0,y > q(x) + ng(x)$. 
-	\vskip 0.1cm
-	Từ ($4$) bằng quy nạp ta cũng có: 
-	\begin{align*}
-		f(y + mg(x)) = f(y) + mh(x), \tag{$6$}
-	\end{align*}
-	với mọi $m \in \mathbb{N^*},x > 0,y > q(x)$.
+	Ví dụ, để tìm biểu diễn trong hệ thập phân của số nhị phân $10101$, ta lập bảng sau:
+	\begin{table}[H]
+		\vspace*{-5pt}
+		\centering
+		\captionsetup{labelformat= empty, justification=centering}
+		\renewcommand{\arraystretch}{1.3}
+		\setlength{\tabcolsep}{9pt}
+		\begin{tabular}{|c|c|c|c|c|c|}
+			\hline
+			Bước $1$&	$1$	&$0$&	$1$&	$0$&	$1$\\
+			\hline
+			Bước $2$&	$2^4$&	$2^3$&	$2^2$&	$2^1$&	$2^0$\\
+			\hline
+			Bước $3$&	$16$&	$8$&	$4$&	$2$&	$1$\\
+			\hline
+			Bước $4$&	$16$&	X&	$4$	&X	&$1$\\
+			\hline
+		\end{tabular}
+		\vspace*{-5pt}
+	\end{table}
+	Giá trị thập phân của số nhị phân $10101$ là $16+4+1=21$.
 	\vskip 0.1cm 
-	Lấy $x, y > 0$  tùy ý, ta hoàn toàn chọn được $m,n \in \mathbb{N^*}$  sao cho $mg(x) > ng(y)$. Đặt  $z = q(x) + q(y)$, khi đó với mọi $k \in \mathbb{N^*}$  thì: 
-	\begin{align*}
-		&f(z + kmg(x) - kng(y))\\
-		\mathop  = \limits^{(5)} &f(z + kmg(x)) - knh(y)\\
-		&(\text{do } z + kmg(x) > q(y) + kng(y))\\
-		\mathop  = \limits^{(6)} &f(z) + kmh(x) - knh(y) (\text{do } z > q(x))\\
-		= &f(z) + k[mh(x) - nh(y)].
-	\end{align*}
-	Nếu $mh(x) - nh(y) < 0$  thì $\mathop {\lim }\limits_{k \to  + \infty } k[mh(x) - nh(y)] =  - \infty$. Vì thế khi  $k$ đủ lớn thì $f(z + kmg(x) - kng(y)) < 0,$
-	vô lý! Do đó  $mh(x) \ge nh(y)$.
-	\vskip 0.1cm
-	Nói tóm lại, ta thu được kết luận sau: 
-	\vskip 0.1cm
-	\centerline{``Nếu  $\frac{{g(x)}}{{g(y)}} > \frac{n}{m}$ thì  $\frac{{h(x)}}{{h(y)}} \ge \frac{n}{m}$."}
-	\vskip 0.1cm
-	Bây giờ giả sử $\frac{{g(x)}}{{h(x)}}$  không phải hàm hằng, tức là tồn tại $x,y > 0$  sao cho $\frac{{g(x)}}{{h(x)}} > \frac{{g(y)}}{{h(y)}}$. Suy ra  $\frac{{g(x)}}{{g(y)}} > \frac{{h(x)}}{{h(y)}}.$
-	\vskip 0.1cm
-	Mặt khác do $\mathbb{Q}$ trù mật trong  $\mathbb{R}$ nên tồn tại số hữu tỷ dương  $\dfrac{m}{n}$ sao cho: 
-	\begin{align*}
-		\frac{{g(x)}}{{g(y)}} > \frac{n}{m} > \frac{{h(x)}}{{h(y)}}.
-	\end{align*}
-	Điều này mâu thuẫn với kết luận ở trên. Vậy  $\frac{{g(x)}}{{h(x)}}$  phải là hàm hằng.
-	\vskip 0.1cm
-	\textbf{\color{hoccungpi}Trở lại bài toán:} Áp dụng bổ đề trên cho phương trình ($3$) ta có ngay điều cần chứng minh.
-	\vskip 0.1cm
-	\textbf{\color{hoccungpi}Cách $\pmb5$:} 
-	\vskip 0.1cm    
-	Giả sử tồn tại $x_0 > 0$  để mà $f({x_0}) > {x_0}.$  Trong ($1$) cho $x = {x_0}$  ta được: 
-	\begin{align*}
-		f(3f({x_0}) + 3y)
-		= f(3{x_0} + y) + 2y, \tag{$7$}
-	\end{align*}
-	với mọi $=y > 0.$
-	\vskip 0.1cm
-	Đặt $A = 3f\left(x_0\right) - 3{x_0} > 0$.  Bằng quy nạp, ta sẽ chứng minh bất đẳng thức sau: 
-	\begin{align*}
-		f(y) \ge y + nA,\forall y > 3{x_0},\forall n \in \mathbb{N}
-	\end{align*}
-	Theo \textbf{\color{hoccungpi}Nhận xét $1$} thì bất đẳng thức ($8$) đúng với  $n = 0$. Giả sử ta đã có $f(y) \ge y + kA$ với mọi $y > 3x_0$ và  $k$ là một số tự nhiên nào đó. Nhiệm vụ của ta bây giờ là chứng minh: 
-	\begin{align*}
-		f(y) \ge y + (k + 1)A,\forall y > 3{x_0}.
-	\end{align*}
-	Rõ ràng $3f({x_0}) + 3y > 3{x_0}$  với mọi $y > 0$ nên theo giả thiết quy nạp thì:
-	\begin{align*}
-		f(3f({x_0}) \!+\! 3y) \!\ge\! 3f({x_0}) \!+\! 3y \!+\! kA,\forall\! y \!>\! 0,
-	\end{align*}
-	suy ra, theo ($7$)
-	\begin{align*}
-		f(3{x_0} \!+\! y) \!+\! 2y \!\ge\! 3f({x_0}) \!+\! 3y \!+\! kA,\forall \!y \!>\! 0,
-	\end{align*}
-	suy ra
-	\begin{align*}
-			f(y + 3{x_0}) \ge y + 3f({x_0}) + kA,\forall y > 0.
-	\end{align*}
-	Đến đây thay  $y$ bởi $y - 3x_0$  ta được:
-	\begin{align*}
-		f(y) \ge y + A + kA,\forall y > 3{x_0},
-	\end{align*}
-	suy ra
-	\begin{align*}
-		f(y) \ge y + (k + 1)A,\forall y > 3{x_0}.
-	\end{align*}
-	Do đó bất đẳng thức ($8$) được chứng minh xong. Trong ($8$) chọn $y = 3x_0 + 1$  và cho  $n \to + \infty$ ta có ngay điều vô lý.
-	\vskip 0.1cm
-	Nói cách khác, không tồn tại $x_0 > 0$ sao cho $f(x_0) > x_0$.  Kết hợp với \textbf{\color{hoccungpi}Nhận xét $\pmb1$} ta có ngay $f(x) = x$  với mọi $x > 0$. Thử lại thấy đây là nghiệm hàm của bài toán.
-	\vskip 0.1cm
-	\textbf{\color{hoccungpi}Bình luận.} Bất đẳng thức ($8$) được tìm ra như sau: Sử dụng \textbf{\color{hoccungpi}Nhận xét $\pmb1$} trong ($7$) ta suy ra: 
-	\begin{align*}
-		f(3{x_0} + y) + 2y \ge 3f({x_0}) + 3y,\forall y > 0,
-	\end{align*}
-	suy ra
-	\begin{align*}
-		f(3{x_0} + y) \ge 3f({x_0}) + y,\forall y > 0.
-	\end{align*}
-	Đến đây thay $y$ bởi $y - 3x_0$, ta được: 
-	\begin{align*}
-		f(y) \ge y + A,\forall y > 3{x_0}.
-	\end{align*}
-	Lặp lại quá trình trên, ta sẽ thu được bất đẳng thức ($8$).
-	\vskip 0.1cm
-	\textbf{\color{hoccungpi}Cách $\pmb6$:}
-	\vskip 0.1cm     
-	Trước hết ta chứng minh  $f$ đồng biến (tăng ngặt) trên $\mathbb{R^+}$.
+	Bằng cách thực hiện các phương pháp nêu trên, ta dễ dàng thu được bảng chuyển đổi từ hệ thập phân sang hệ nhị phân của $32$ số tự nhiên đầu tiên như sau:
+	\begin{table}[H]
+		\vspace*{-5pt}
+		\centering
+		\captionsetup{labelformat= empty, justification=centering}
+		\renewcommand{\arraystretch}{1.3}
+		\resizebox{\columnwidth}{!}{\begin{tabular}{|c|c|c|c|}
+			\hline
+			\makecell{Hệ\\thập phân} & \makecell{Hệ\\nhị phân} & \makecell{Hệ\\thập phân} & \makecell{Hệ\\nhị phân}\\
+			\hline
+			$0$& $0$& $16$& $10000$\\
+			\hline
+			$1$& $1$& $17$& $10001$\\
+			\hline
+			$2$& $10$& $18$& $10010$\\
+			\hline
+			$3$& $11$& $19$& $10011$\\
+			\hline
+			$4$& $100$& $20$& $10100$\\
+			\hline
+			$5$& $101$& $21$& $10101$\\
+			\hline
+			$6$& $110$& $22$& $10110$\\
+			\hline
+			$7$& $111$& $23$& $10111$\\
+			\hline
+			$7$& $1000$& $24$& $11000$\\
+			\hline
+			$9$& $1001$& $25$&$11001$\\
+			\hline
+			$10$& $1010$& $26$& $11010$\\
+			\hline
+			$11$& $1011$& $27$& $11011$\\
+			\hline
+			$12$& $1100$& $28$& $11100$\\
+			\hline
+			$13$ &$1101$& $29$& $11101$\\
+			\hline
+			$14$& $1110$& $30$& $11110$\\
+			\hline
+			$15$& $1111$& $31$& $11111$\\
+			\hline 
+		\end{tabular}}
+%		\vspace*{-5pt}
+	\end{table}
+	\textbf{\color{hoccungpi}Bí mật của trò chơi đoán suy nghĩ}
 	\vskip 0.1cm 
-	Sử dụng \textbf{\color{hoccungpi}Nhận xét $\pmb1$} ở ($1$) ta được:
-	\begin{align*}
-		f(3x + y) + 2y \ge 3f(x) + 3y,\forall x,y > 0
-	\end{align*}
-	suy ra
-	\begin{align*}
-	f(3y + x) \ge 2(f(x) - x) + f(x) + 3f(y), 
-	\end{align*}
-	với mọi $x,y > 0$.
-	Đến đây thay $y$ bởi $3f(y)$  rồi sử dụng ($1$) ta được: 
-	\begin{align*}
-		f(3y \!+\! x) \!+\! 2x \ge 3f(x) \!+\! 3f(y),
-	\end{align*}
-	suy ra
-	\begin{align*}
-		f(3y + x) &\ge 2(f(x) - x) + f(x) + 3f(y),\\
-		&\ge f(x) + 3f(y),\forall x,y > 0. \tag{$9$}
-	\end{align*}
-	Do đó với mọi $a,b > 0$  mà $a > b$  thì: 
-	\begin{align*}
-		f(a) &= f(3 \cdot \frac{{a - b}}{3} + b)\mathop  \ge \limits^{(9)} f(b) + 3f(\frac{{a - b}}{3})\\
-		& > f(b).
-	\end{align*}
-	Như vậy $f$  đồng biến trên $\mathbb{R^+}$.
-	\vskip 0.1cm 
-	Trong ($9$)  thay $x$  bởi $3f(x)$  rồi sử dụng ($1$) và tính đồng biến của $f$ thì được: 
-	\begin{align*}
-		f(3x \!+\! y) \!+\! 2y 
-		&\!\ge\! f(3f(x)) \!+\! 3f(y),\tag{$10$}\\
-		&\!\ge\! f(3x) \!+\! 3f(y),\forall x,y > 0
-	\end{align*}
-	suy ra
-	\begin{align*}
-		f(3x + y) &\ge f(3x) \!+\! 2(f(y) \!-\! y) \!+\! f(y)\\
-		&\ge f(3x) + f(y),\forall x,y > 0.
-	\end{align*}
-	Nói tóm lại, 
-	\begin{align*}
-		f(x + y) \ge f(x) + f(y),\forall x,y > 0.
-	\end{align*}
-	Sử dụng đánh giá trên, ta có (với mọi $x,y >0$): 
-	\begin{align*}
-		f(3f(x) + 3y) &= f(3f(x) + y + 2y)\\
-		&\ge f(3f(x) + y) + f(2y)\\
-		&\ge f(3f(x) + y) + 2y,
-	\end{align*}
-	suy ra, theo ($1$)
-	\begin{align*}
-		f(3x + y) + 2y &\ge f(3f(x) + y) + 2y,\\
-		f(3x + y) &\ge f(3f(x) + y),
-	\end{align*}
-	Mặt khác $f$  đồng biến trên $\mathbb{R^+}$  nên từ bất đẳng thức trên ta có ngay: 
-	\begin{align*}
-		3x + y &\ge 3f(x) + y,\forall x,y > 0\\
-		x &\ge f(x),\forall x > 0.
-	\end{align*}
-	Kết hợp với \textbf{\color{hoccungpi}Nhận xét} $\pmb1$ ta thu được $f(x) = x$.
+	Để trả lời câu hỏi Ảo thuật gia đã làm thế nào, ta đánh số các lá cờ từ $0$ tới $31$ như hình dưới đây.
+	\begin{figure}[H]
+		\vspace*{-5pt}
+		\centering
+		\captionsetup{labelformat= empty, justification=centering}
+		\includegraphics[width= 1\linewidth]{7}
+%		\caption{\small\textit{\color{}}}
+		\vspace*{-15pt}
+	\end{figure}
+	Bí mật của trò chơi đoán suy nghĩ nằm ở biểu diễn trong hệ nhị phân của giá trị của mỗi lá cờ trên. Tưởng tượng rằng Người chơi chọn lá cờ của Việt Nam. Sau khi trả lời $5$ câu hỏi của Ảo thuật gia, ta thu được dãy câu trả lời như sau: Có -- Không -- Không -- Có -- Không . Ảo thuật gia sẽ thay thế từ ``Có" bởi số $1$ và từ ``Không" bởi số $0$ để nhận được biểu diễn trong hệ nhị phân như sau: $10010$. Bằng cách chuyển số đó qua hệ thập phân, Ảo thuật gia thu được kết quả là $18$ (xem ở bảng dưới đây) -- tương ứng với vị trí của là cờ của nước Việt nam như đã đánh số ban đầu.
 	\vskip 0.1cm
-	\textbf{\color{hoccungpi}Cách $\pmb7$:}
-	\vskip 0.1cm  
-	Ta sẽ chứng minh $f$  đồng biến trên $\mathbb{R^+}$  bằng phản chứng. 
-	\vskip 0.1cm
-	Giả sử tồn tại hai số dương $a> b$  sao cho $f(a) \le f(b).$  Đặt  $\varepsilon  = f(b) - f(a) \ge 0.$
-	\vskip 0.1cm
-	Trong ($1$) cho  $x = b$ thì được (với mọi $y>0$): 
-	\begin{align*}
-		f(3f(b) + 3y) = f(3b + y) + 2y,
-	\end{align*}
-	suy ra
-	\begin{align*}
-		f(3f(a) + 3(y + \varepsilon )) = f(3b + y) + 2y,
-	\end{align*}
-	suy ra, theo ($1$)
-	\begin{align*}
-		f(3a \!+\! y \!+\! \varepsilon ) \!+\! 2(y \!+\! \varepsilon ) \!=\! f(3b \!+\! y) \!+\! 2y,
-	\end{align*}
-	suy ra
-	\begin{align*}
-		f(y + 3b) = f(y + 3a + \varepsilon ) + 2\varepsilon,
-	\end{align*}
-	Đến đây thay $y$  bởi $y - 3b$  và đặt $T = 3a - 3b + \varepsilon$  thì được: 
-	\begin{align*}
-		f(y) = f(y \!+\! T) \!+\! 2\varepsilon  \ge f(y \!+\! T),\forall y \!>\! 3b.	
-	\end{align*}
-	Sử dụng đánh giá trên liên tiếp ta được: 
-	\begin{align*}
-		f(y) \ge f(y + nT),\forall y > 3b,n \in \mathbb{N^*}.
-	\end{align*}
-	Áp dụng \textbf{\color{hoccungpi}Nhận xét} $\pmb1$ vào bất đẳng thức trên ta có ngay:
-	\begin{align*}
-		f(y) \ge y + nT,\forall y > 3b,n \in \mathbb{N^*}.
-	\end{align*}
-	Từ đây chọn $y =3b + 1$ và cho $n \to + \infty$  ta có ngay điều vô lý. Do vậy $f$  đồng biến trên  $\mathbb{R^+}$.
-	\vskip 0.1cm
-	Sử dụng \textbf{\color{hoccungpi}nhận xét} $\pmb1$ trong ($1$) ta được: 
-	\begin{align*}
-		&f(3x + y) + 2y \ge 3f(x) + 3y,\forall x,y > 0
-	\end{align*}
-	suy ra
-	\begin{align*}
-		f(3x + y) \ge 3f(x) + y,\forall x,y > 0. \tag{$11$}
-	\end{align*}
-	Ta có $3f(x) + 3y \ge 3x + 3y,\forall x,y > 0$  và $f$  đồng biến trên $\mathbb{R^+}$  nên:
-	\begin{align*}
-		f(3f(x) + 3y) \ge f(3x + 3y),\forall x,y > 0
-	\end{align*}
-	suy ra, theo ($1$)
-	\begin{align*}
-		f(3x + y) + 2y \ge f(3x + 3y),\forall x,y > 0.
-	\end{align*}
-	Đến đây thay $x$ bởi $\dfrac{x}{3}$  thì được: 
-	\begin{align*}
-		&f(x + y) + 2y \\
-		\ge &f(x + 3y)\mathop  \ge \limits^{(11)} 3f(y) + x,\forall x,y > 0.
-	\end{align*}
-	Trong đánh giá trên cho $x = 2y$  ta được:
-	\begin{align*}
-		f(3y) \ge 3f(y),\forall y > 0. \tag{$12$}
-	\end{align*}
-	Trong ($1$) thay  $y$ bởi $3f(y)$  rồi sử dụng ($1$) ta được:   
-	\begin{align*}
-		&f(3f(x) + 9f(y)) \\
-		= &f(3y + x) + 6f(y) + 2x,\forall x,y > 0. \tag{$13$}
-	\end{align*}
-	Mặt khác $3f(x) + 9f(y) \ge 3(x + 3y),\forall x,y > 0$  và $f$  đồng biến trên $\mathbb{R^+}$   nên: 
-	\begin{align*}
-		&f(3f(x) + 9f(y)) \\
-		\ge & f(3(x + 3y))\mathop  \ge \limits^{(12)} 3f(x + 3y),\forall x,y > 0.
-	\end{align*}
-	Sử dụng đánh giá này ở ($13$)  ta được:
-	\begin{align*}
-		f(3y + x) + 6f(y) + 2x \ge 3f(x + 3y),
-	\end{align*}
-	với mọi $x, y > 0$. Suy ra
-	\begin{align*}
-		x + 3f(y) \ge f(3y + x),\forall x,y > 0.
-	\end{align*}
-	Mặt khác theo ($11$) ta lại có $f(3y + x) \ge x + 3f(y),\forall x,y > 0.$  Do đó: 
-	\begin{align*}
-		f(3y + x) = x + 3f(y),\forall x,y > 0. 
-	\end{align*}
-	Đến đây thay $x$  bởi $3x$  ta được: 
-	\begin{align*}
-		f(3y + 3x) = 3x + 3f(y),\forall x,y > 0.
-	\end{align*}
-	Trong đẳng thức trên hoán đổi vị trí của $x$  và $y$ cho nhau ta được: 
-	\begin{align*}
-		3x + 3f(y) = 3y + 3f(x),\forall x,y > 0,
-	\end{align*}
-	suy ra
-	\begin{align*}
-		f(x) - x = f(y) - y,\forall x,y > 0.
-	\end{align*}
-	Nói cách khác, 
-	\begin{align*}
-		f(x) = x + C,\forall x > 0. 
-	\end{align*}
-	Thay công thức trên vào ($1$) ta tìm được: $C = 0$.
-	\vskip 0.1cm  
-	\columnbreak
-	$\pmb{3.}$	\textbf{\color{hoccungpi}Lời kết}
-	\vskip 0.1cm
-	Vậy là chúng ta đã cùng nhau đi qua bảy lời giải cho bài toán phương trình hàm trên. Trong số các lời giải này, có $3$ cách sử dụng \textbf{\color{hoccungpi}Nhận xét} $\pmb2$ và cũng có $3$ cách lấy \textbf{\color{hoccungpi}Nhận xét} $\pmb1$ làm ý tưởng chủ đạo, xen vào giữa là lời giải sử dụng một bổ đề rất mạnh thường dùng để giải quyết những bài toán phương trình hàm trên tập hợp số thực dương. Sẽ là tuyệt vời hơn nữa nếu số lượng lời giải cho bài toán này không chỉ dừng lại ở con số $7$.  Nói đến đây, tôi chợt nhớ đến lời khuyên từ một người thầy của tôi: ``Làm toán không nhất thiết phải chạy theo số lượng bài tập, mà đôi khi chỉ cần hiểu sâu sắc một bài và dành thời gian đào sâu bản chất của bài toán đó." Hy vọng rằng với những gì tôi chia sẻ trên đây sẽ góp phần giúp bạn đọc tìm ra phương pháp học tập tốt nhất cho bản thân, đồng thời luôn nuôi giữ được niềm say mê Toán học của mình. 
-	Mọi góp ý cho bài viết này xin vui lòng gửi về email quangchv$1234$@gmail.com.
+	\begin{table}[H]
+		\vspace*{-5pt}
+		\centering
+		\captionsetup{labelformat= empty, justification=centering}
+		\renewcommand{\arraystretch}{1.35}
+		\resizebox{\columnwidth}{!}{\begin{tabular}{|l|c|c|c|c|c|}
+			\hline
+			\makecell{Dãy câu\\ trả lời}&	Có&	Không&	Không&	Có&	Không\\
+			\hline
+			\makecell{Hệ\\nhị phân}&	$1$&	$0$&	$0$&	$1$&	$0$\\
+			\hline
+			\makecell{Lũy thừa\\ $2$}&	$2^4$&	$2^3$&	$2^2$&	$2^1$&	$2^0$\\
+			\hline
+			\makecell{Giá trị\\ tương ứng}&	$16$&	X&	X&	$2$&	X\\
+			\hline
+			\multicolumn{6}{|l|}{\makecell[c]{Giá trị trong hệ thập phân nhận được là $16+2=18$\\ tương ứng với vị trí của lá cờ được chọn trong bảng\\ các lá cờ được đưa ra ban đầu.}}\\
+			\hline
+		\end{tabular}}
+%		\vspace*{-5pt}
+	\end{table}
+	Đến đây Bạn đọc có thể dễ dàng nhận thấy rằng việc chọn các lá cờ trong $5$ câu hỏi mà Ảo thuật gia đã  đưa ra ban đầu là không ngẫu nhiên. Sự lựa chọn có tính sắp đặt đó hoàn toàn phụ thuộc vào biểu diễn trong hệ nhị phân của giá trị của từng lá cờ. Ví dụ như lá cờ của Việt Nam có vị trí tương ứng là $18$, giá trị chuyển của hệ nhị phân là $10010$. Từ đó Ảo thuật gia sẽ sắp đặt sao cho lá cờ của Việt Nam chỉ xuất hiện trong câu hỏi $1$ và câu hỏi $4$. Thêm một ví dụ nữa là lá cờ của nước Canada được đánh số $2$, chuyển qua hệ nhị phân ta được $10$ hay $00010$, chính vì vậy lá cờ của Canada chỉ xuất hiện trong câu hỏi số $4$ mà không xuất hiện trong những câu hỏi còn lại. Tương tự như vậy Ảo thuật gia có thể dễ dàng sắp đặt các lá cờ còn lại trong các câu hỏi để cho việc tìm lại lá cờ được chọn diễn ra một cách chính xác và nhanh chóng. 
 	\vskip 0.1cm
 	\textbf{\color{hoccungpi}Tài liệu tham khảo}
 	\vskip 0.1cm
-	[$1$] Nguyễn Tài Chung, Lê Hoành Phò, \textit{Chuyên khảo Phương trình hàm}. NXB Đại học Quốc gia Hà Nội: Hà Nội, $2016$.
-	\vskip 0.1cm
-	[$2$] Nguyễn Nhất Huy, Phạm Hoàng Sơn, ``Khai thác một lớp các hệ thức đặc biệt khi giải phương trình hàm" trong \textit{Các phương pháp giải toán qua các kỳ thi Olympic $2023$}, Trần Nam Dũng. Vũng Tàu, $2023$, tr.$93-116$.
-	\vskip 0.1cm  
-	[$3$] Group Facebook: \textit{Hướng tới Olympic Toán VN}.
-\end{multicols}
-\vspace*{-10pt}
-\rule{1\linewidth}{0.1pt}
-\vskip 0.2cm
-\centerline{\LARGE{\textbf{\color{hoccungpi}LỜI GIẢI, ĐÁP ÁN}}}
-\vskip 0.2cm
-\begin{multicols}{2}
-	\textbf{\color{hoccungpi}Cuộc thẩm tra đặc biệt}
-	\vskip 0.1cm
-	Lần phát câu hỏi thứ nhất, tất cả các đối tượng đến từ băng Mèo Rừng đều được phát câu hỏi trên tấm bìa màu xanh, còn các đối tượng đến từ băng Báo Hoa đều được phát câu hỏi trên tấm bìa màu hồng. Vậy tổng số tấm bìa màu hồng bằng số tên cướp của băng Báo Hoa. Ta gọi số này là $n$.
-	\vskip 0.1cm
-	Trong lần phát câu hỏi thứ hai, số các đối tượng đến từ băng Mèo Rừng nhận câu hỏi có màu hồng  bằng số các đối tượng đến từ băng Báo Hoa nhận câu hỏi có màu xanh (vì bằng bằng $n$ trừ đi số các đối tượng đến từ băng Báo Hoa nhận câu hỏi có màu  hồng). 
-	\vskip 0.1cm
-	Có tất cả $10$ đối tượng tuyên bố ``lần này tôi nhận được câu hỏi in trên tấm bìa màu hồng". $10$ đối tượng này gồm những tên đến từ băng Mèo Rừng nhận tấm bìa màu hồng và những tên đến từ băng Báo Hoa nhận tấm bìa màu xanh. Suy ra có đúng $10:2 = 5$ đối tượng đến từ từ băng Mèo Rừng đã nhận được câu hỏi in trên tấm bìa màu hồng trong lần phát câu hỏi thứ hai.
-	\vskip 0.1cm
-	\textbf{\color{hoccungpi}Đố vui}
-	\vskip 0.1cm
-	Giả sử có thể trả được $a$ xu bằng $b$ đồng xu, bao gồm $x$ đồng $1$ xu, $y$ đồng $2$ xu, $z$ đồng $5$ xu, $t$ đồng $1$ hào, $u$ đồng $2$ hào, $v$ đồng $5$ hào và $w$ đồng $1$ đồng. Nghĩa là $x+y+z+t+u+v+w=b$ và
-	\begin{align*}
-		x+ 2y + 5z+ 10t + 20u+ 50v + 100w=a.
-	\end{align*}
-	Suy ra, bằng cách nhân cả hai vế của phương trình đầu với $100$, ta được 
-	\begin{align*}
-		&100x \!+\!100y\!+\!100z\!+\!100t\!+\! 100u \!+\! 100v \\
-		&+\!100w\!=\!100b.
-	\end{align*}
-	Hay,
-	\begin{align*} 
-		&x\!\cdot\! 100 \!+\! 2y\!\cdot\! 50 \!+\! 5z\!\cdot\! 20 \!+\! 10 t \!\cdot\! 10 \!+\! 20u \!\cdot\! 5 \!\\
-		&+\! 50v\!\cdot\! 2 \!+\! 100w \!\cdot\! 1\!=\! 100b.
-	\end{align*} 
-	Điều này có nghĩa là có thể trả $b$ đồng bằng $x+ 2y + 5z+ 10t +20u + +50v+ 100w=a$ đồng xu, gồm $x$ đồng $1$ đồng, $2y$ đồng $5$ hào, $5z$ đồng $2$ hào, $10t$ đồng $1$ hào, $20u$ đồng $5$ xu, $50v$ đồng $2$ xu và $100w$ đồng $1$ xu.
+	Transmission de pensée -- La magie du binaire -- Inria -- Institut national de recherche en sciences et technologies du numérique (hal. science). 
 \end{multicols}
